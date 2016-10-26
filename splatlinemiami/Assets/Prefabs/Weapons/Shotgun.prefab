@@ -20,14 +20,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010012146420}
   - 212: {fileID: 212000011993563120}
-  - 114: {fileID: 114000010597872382}
+  - 114: {fileID: 114000013562582274}
   m_Layer: 10
-  m_Name: Pistol
+  m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4000010012146420
 Transform:
   m_ObjectHideFlags: 1
@@ -41,7 +41,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000010597872382
+--- !u!114 &114000013562582274
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,12 +49,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000012840858512}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf0136ab0fff684894efd1b99721bf3, type: 3}
+  m_Script: {fileID: 11500000, guid: fab36cb444750aa4fa624b603a9dcc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 114000012226278898, guid: 77d9686e64d88dd40952f90d3d670d0f, type: 2}
-  fireCooldown: 0.5
-  shootSound: {fileID: 8300000, guid: c596f9bb95a763542a2b503b4cfdd0ab, type: 3}
+  fireCooldown: 1.25
+  shootSound: {fileID: 8300000, guid: 9eace8a864b3116468269a1d110d73aa, type: 3}
+  bulletsPerShot: 8
+  spreadRange: 10
 --- !u!212 &212000011993563120
 SpriteRenderer:
   m_ObjectHideFlags: 1
