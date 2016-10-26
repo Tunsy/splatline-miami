@@ -38,7 +38,8 @@ public class AttackController : MonoBehaviour {
 
         // Convert the angle of the player to the velocity of the bullet and shoot it forward
         GameObject currentBullet = (GameObject)Instantiate(currentWeapon.bullet.gameObject, currentWeapon.transform.position, transform.rotation);
-        Vector2 angle = Quaternion.AngleAxis(transform.rotation.eulerAngles.z, Vector3.forward) * Vector3.up;
+        Vector2 angle = Quaternion.AngleAxis(transform.rotation.eulerAngles.z + Random.Range(-3f, 3f), Vector3.forward) * Vector3.up;
+        
         currentBullet.GetComponent<Rigidbody2D>().velocity = angle * currentBullet.GetComponent<Bullet>().bulletSpeed;
     }
 }
