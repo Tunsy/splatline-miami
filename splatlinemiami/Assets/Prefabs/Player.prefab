@@ -41,6 +41,7 @@ GameObject:
   - 50: {fileID: 50000010329137594}
   - 58: {fileID: 58000011857484936}
   - 114: {fileID: 114000011567753468}
+  - 114: {fileID: 114000013976082594}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -144,6 +145,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rotateSpeed: 100
+--- !u!114 &114000013976082594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010723746834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0365dfde4d291e748bd36f7698daae11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000012549687894
 SpriteRenderer:
   m_ObjectHideFlags: 1
