@@ -30,6 +30,10 @@ public class Bullet : MonoBehaviour {
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Shootable"))
         {
+            //Take Damage
+            EnemyHealth health = other.gameObject.GetComponent<EnemyHealth>();
+            health.TakeDamage(damage);
+
             Destroy(gameObject);
         }
     }
