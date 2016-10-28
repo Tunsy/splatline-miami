@@ -20,7 +20,7 @@ public class Explosive : Bullet {
         if (other.gameObject.layer == LayerMask.NameToLayer("Shootable"))
         {
             // Instantiate an explosion
-            Explosion explosion = (Explosion) Instantiate(explosion, transform.position);
+            Explosion currentExplosion = (Explosion) Instantiate(explosion, transform.position, Quaternion.identity);
             explosion.DealDamage();
         }
     }
