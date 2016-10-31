@@ -28,7 +28,12 @@ public class Bullet : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Shootable"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Map"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.layer == LayerMask.NameToLayer("Shootable"))
         {
             //Take Damage
             EnemyHealth health = other.gameObject.GetComponent<EnemyHealth>();

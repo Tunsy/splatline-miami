@@ -17,7 +17,7 @@ public class Explosive : Bullet {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Shootable"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Shootable") || other.gameObject.layer == LayerMask.NameToLayer("Map"))
         {
             // Instantiate an explosion
             Explosion currentExplosion = (Explosion) Instantiate(explosion, transform.position, Quaternion.identity);
