@@ -14,8 +14,10 @@ public class BloodTile : MonoBehaviour
         { "Water", Color.blue },
     };
 
-    public bool isBloody = false;
+    public string isBloody = "false";
     public int NumberOfClicks = 0;
+    public float timer = 0;
+    public float maxTime = 3;
 
     private void OnDrawGizmosSelected()
     {
@@ -23,7 +25,7 @@ public class BloodTile : MonoBehaviour
         position.x += 8;
         position.y -= 8;
 
-        Color drawColor;
+        //Color drawColor;
         //if (!BloodTile.TypeToColor.TryGetValue(this.isBloody, out drawColor))
         //{
         //    drawColor = Color.black;
@@ -38,6 +40,25 @@ public class BloodTile : MonoBehaviour
 
         //Gizmos.color = drawColor;
         //Gizmos.DrawWireCube(position, new Vector3(16, 16, 0));
+    }
+
+    public void Update()
+    {
+        //Debug.Log(isBloody);
+
+        timer += Time.deltaTime;
+        if(timer > maxTime)
+        {
+            timer = 0;
+
+            if(isBloody == "false")
+            {
+                isBloody = "true";
+            }else
+            {
+                isBloody = "false";
+            }
+        }
     }
 
 }
