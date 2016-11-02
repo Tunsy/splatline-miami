@@ -18,16 +18,25 @@ public class GameManager : MonoBehaviour
 
     private float timer;
     public float roundTime;
+
+    public BloodTile bloodTile;
+    public Transform tileGrid;
+    private BloodTile[,] bloodyTiles;
     private int currentLevel;
-    private bool[,] bloodyTiles;
+    
+    // Offset in tiles
+    public float xTileOffset;
+    public float yTileOffset;
 
     public void Start()
     {
         timer =  roundTime;
-        currentLevel = 0;
         currentState = StateType.PLAYING;
+        yTileOffset *= -1;
+        currentLevel = 0;
         Vector2 gridSize = calculateGridSize(6,6,4);
-        bloodyTiles = new bool[(int)gridSize.x,(int)gridSize.y];
+        bloodyTiles = new BloodTile[(int)gridSize.x,(int)gridSize.y];
+        GenerateBloodTiles();
     }
 
     public void Update()
@@ -61,5 +70,19 @@ public class GameManager : MonoBehaviour
         int gridLength = (length + currentLevel) * divisions;
         int gridHeight = (height + currentLevel) * divisions;
         return new Vector2(gridLength, gridHeight);
+    }
+
+    public void GenerateBloodTiles()
+    {
+        // Generate the array of tiles to be marked as bloody
+        for (int i = 0; i < bloodyTiles.GetLength(0); i++)
+        {
+            float yPos = yTileOffset + (i * bloodTile.ySize) * -1;
+            for (int j = 0; j < bloodyTiles.GetLength(1); j++)
+            {
+                float xPos = xTileOffset + (j * bloodTile.xSize);
+                BloodTile currentTile = (BloodTile)Instantiate(bloodTile, new Vector3(xPos, yPos, 0), Quaternion.identity, tileGrid);
+            }
+        }
     }
 }

@@ -12,7 +12,7 @@ public class CustomImporter_Blood : Tiled2Unity.ICustomTiledImporter
         if (customProperties.ContainsKey("isBloody"))
         {
             // Add the terrain tile game object
-            BloodTile tile = gameObject.AddComponent<BloodTile>();
+            FBloodTile tile = gameObject.AddComponent<FBloodTile>();
             tile.isBloody = customProperties["isBloody"];
         }
     }

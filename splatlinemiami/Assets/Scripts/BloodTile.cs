@@ -1,64 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
-public class BloodTile : MonoBehaviour
-{
-    private static readonly IDictionary<string, Color> TypeToColor = new Dictionary<string, Color>()
-    {
-        { "Bridge", new Color(0.5f, 0, 0f) },
-        { "Grass", new Color(0.9f, 0.6f, 0) },
-        { "Mountain", Color.red },
-        { "Tree", new Color(0, 0.5f, 0) },
-        { "Wall", Color.black },
-        { "Water", Color.blue },
-    };
+public class BloodTile : MonoBehaviour {
 
-    public string isBloody = "false";
-    public int NumberOfClicks = 0;
-    public float timer = 0;
-    public float maxTime = 3;
+    public bool isBloody;
+    private BoxCollider2D col;
 
-    private void OnDrawGizmosSelected()
-    {
-        Vector3 position = this.transform.position;
-        position.x += 8;
-        position.y -= 8;
+    public float xSize;
+    public float ySize;
 
-        //Color drawColor;
-        //if (!BloodTile.TypeToColor.TryGetValue(this.isBloody, out drawColor))
-        //{
-        //    drawColor = Color.black;
-        //}
-
-
-        //Color fillColor = drawColor;
-        //fillColor.a = 0.25f;
-
-        //Gizmos.color = fillColor;
-        //Gizmos.DrawCube(position, new Vector3(16, 16, 0));
-
-        //Gizmos.color = drawColor;
-        //Gizmos.DrawWireCube(position, new Vector3(16, 16, 0));
-    }
-
-    public void Update()
-    {
-        //Debug.Log(isBloody);
-
-        timer += Time.deltaTime;
-        if(timer > maxTime)
-        {
-            timer = 0;
-
-            if(isBloody == "false")
-            {
-                isBloody = "true";
-            }else
-            {
-                isBloody = "false";
-            }
-        }
-    }
-
+	// Use this for initialization
+	void Start () {
+        isBloody = false;
+        col = GetComponent<BoxCollider2D>();
+        xSize = col.size.x;
+        ySize = col.size.y;
+        Debug.Log("2 " + xSize);
+        col.offset = new Vector2(col.size.x/2, col.size.y/2 * -1);
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
 }
