@@ -19,4 +19,14 @@ public class Explosion : MonoBehaviour {
 
         // Deal damage to all enemies
     }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        EnemyHealth health = other.gameObject.GetComponent<EnemyHealth>();
+
+        if(health != null)
+        {
+            health.TakeDamage(4);
+        }
+    }
 }

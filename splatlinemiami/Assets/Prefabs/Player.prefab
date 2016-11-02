@@ -208,6 +208,7 @@ MonoBehaviour:
   bullet: {fileID: 114000012226278898, guid: 77d9686e64d88dd40952f90d3d670d0f, type: 2}
   fireCooldown: 0.5
   shootSound: {fileID: 8300000, guid: c596f9bb95a763542a2b503b4cfdd0ab, type: 3}
+  maxBulletCount: 0
 --- !u!114 &114000013034855510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,6 +223,7 @@ MonoBehaviour:
   bullet: {fileID: 114000012226278898, guid: 77d9686e64d88dd40952f90d3d670d0f, type: 2}
   fireCooldown: 1.25
   shootSound: {fileID: 8300000, guid: 9eace8a864b3116468269a1d110d73aa, type: 3}
+  maxBulletCount: 0
   bulletsPerShot: 8
   spreadRange: 10
 --- !u!114 &114000013976082594
@@ -249,6 +251,7 @@ MonoBehaviour:
   bullet: {fileID: 114000012226278898, guid: 77d9686e64d88dd40952f90d3d670d0f, type: 2}
   fireCooldown: 0.1
   shootSound: {fileID: 8300000, guid: f86f4236bd1b8864e8186401a4c18bb5, type: 3}
+  maxBulletCount: 0
 --- !u!212 &212000011365004734
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -344,7 +347,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300144, guid: 04181a8cb6b72a94b8fe6bf680b4b857, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 40f6271a080430d45b98416b0b9ca156, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

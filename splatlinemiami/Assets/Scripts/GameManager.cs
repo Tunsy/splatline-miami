@@ -19,12 +19,15 @@ public class GameManager : MonoBehaviour
     private float timer;
     public float roundTime;
     private int currentLevel;
+    private bool[,] bloodyTiles;
 
     public void Start()
     {
         timer =  roundTime;
         currentLevel = 0;
         currentState = StateType.PLAYING;
+        Vector2 gridSize = calculateGridSize(6,6,4);
+        bloodyTiles = new bool[(int)gridSize.x,(int)gridSize.y];
     }
 
     public void Update()
@@ -51,5 +54,12 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
         }
+    }
+
+    private Vector2 calculateGridSize(int length, int height, int divisions)
+    {
+        int gridLength = (length + currentLevel) * divisions;
+        int gridHeight = (height + currentLevel) * divisions;
+        return new Vector2(gridLength, gridHeight);
     }
 }
