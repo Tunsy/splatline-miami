@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public Transform tileGrid;
     private BloodTile[,] bloodyTiles;
     private int currentLevel;
+    public int totalBloodCount;
     
     // Offset in tiles
     public float xTileOffset;
@@ -84,5 +85,30 @@ public class GameManager : MonoBehaviour
                 BloodTile currentTile = (BloodTile)Instantiate(bloodTile, new Vector3(xPos, yPos, 0), Quaternion.identity, tileGrid);
             }
         }
+    }
+
+    //public bool CheckBloodTiles(int percentFilled)
+    //{
+    //    int count = 0;
+    //    int totalSize = bloodyTiles.GetLength(0) * bloodyTiles.GetLength(1);
+
+    //    for (int i = 0; i < bloodyTiles.GetLength(0); i++)
+    //    {
+    //        for(int j = 0; j < bloodyTiles.GetLength(1); j++)
+    //        {
+    //            if(bloodyTiles[i,j].isBloody == true)
+    //            {
+    //                count++;
+    //            }
+    //        }
+    //    }
+    //    return false;
+    //}
+
+    public bool CheckBloodTiles(int percentFilled)
+    {
+        int totalSize = bloodyTiles.GetLength(0) * bloodyTiles.GetLength(1);
+
+        return (totalBloodCount/totalSize)*100 > percentFilled;
     }
 }

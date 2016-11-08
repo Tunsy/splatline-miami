@@ -38,6 +38,7 @@ public class Bullet : MonoBehaviour {
             //Take Damage
             EnemyHealth health = other.gameObject.GetComponent<EnemyHealth>();
             health.TakeDamage(damage);
+            health.SplatterBlood(); // TODO: Encapsulate in takeDamage()
 
             Destroy(gameObject);
         }
