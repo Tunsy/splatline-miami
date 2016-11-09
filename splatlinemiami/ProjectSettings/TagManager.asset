@@ -38,12 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Map
+    uniqueID: 2237786773
+    locked: 0
+  - name: Blood
+    uniqueID: 3797372185
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Other
     uniqueID: 1426044313
-    locked: 0
-  - name: Map
-    uniqueID: 2237786773
     locked: 0

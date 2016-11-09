@@ -53,3 +53,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   roundTime: 60
+  bloodTile: {fileID: 0}
+  tileGrid: {fileID: 0}
+  totalBloodCount: 0
+  percentToExpand: 0
+  xTileOffset: 3
+  yTileOffset: 3
+  money: 0

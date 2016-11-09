@@ -8,6 +8,8 @@ public class BloodTile : MonoBehaviour {
 
     public float xSize;
     public float ySize;
+    public int x;
+    public int y;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +17,6 @@ public class BloodTile : MonoBehaviour {
         col = GetComponent<BoxCollider2D>();
         xSize = col.size.x;
         ySize = col.size.y;
-        Debug.Log("2 " + xSize);
         col.offset = new Vector2(col.size.x/2, col.size.y/2 * -1);
 	}
 	

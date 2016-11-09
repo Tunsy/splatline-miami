@@ -23,10 +23,15 @@ public class GameManager : MonoBehaviour
     public Transform tileGrid;
     private BloodTile[,] bloodyTiles;
     private int currentLevel;
+    public int totalBloodCount;
+    public int percentToExpand;
     
     // Offset in tiles
     public float xTileOffset;
     public float yTileOffset;
+
+    //
+    public int money;
 
     public void Start()
     {
@@ -34,6 +39,8 @@ public class GameManager : MonoBehaviour
         currentState = StateType.PLAYING;
         yTileOffset *= -1;
         currentLevel = 0;
+        money = 0;
+
         Vector2 gridSize = calculateGridSize(6,6,4);
         bloodyTiles = new BloodTile[(int)gridSize.x,(int)gridSize.y];
         GenerateBloodTiles();
@@ -49,7 +56,6 @@ public class GameManager : MonoBehaviour
         {
             timer = roundTime;
             currentState = StateType.SHOP;
-            Debug.Log("Times up!");
         }
     }
 
@@ -81,8 +87,56 @@ public class GameManager : MonoBehaviour
             for (int j = 0; j < bloodyTiles.GetLength(1); j++)
             {
                 float xPos = xTileOffset + (j * bloodTile.xSize);
-                BloodTile currentTile = (BloodTile)Instantiate(bloodTile, new Vector3(xPos, yPos, 0), Quaternion.identity, tileGrid);
+                BloodTile currentTile = (BloodTile)Instantiate(bloodTile, new Vector3(xPos, yPos, 1), Quaternion.identity, tileGrid);
+                currentTile.x = j;
+                currentTile.y = i;
             }
         }
+    }
+
+    //public bool CheckBloodTiles(int percentFilled)
+    //{
+    //    int count = 0;
+    //    int totalSize = bloodyTiles.GetLength(0) * bloodyTiles.GetLength(1);
+
+    //    for (int i = 0; i < bloodyTiles.GetLength(0); i++)
+    //    {
+    //        for(int j = 0; j < bloodyTiles.GetLength(1); j++)
+    //        {
+    //            if(bloodyTiles[i,j].isBloody == true)
+    //            {
+    //                count++;
+    //            }
+    //        }
+    //    }
+    //    return false;
+    //}
+
+    public void CheckBloodTiles()
+    {
+        int totalSize = bloodyTiles.GetLength(0) * bloodyTiles.GetLength(1);
+        float percentCurrentlyFilled = ((float)totalBloodCount / totalSize)*100;
+        Debug.Log(percentCurrentlyFilled);
+
+        if (percentCurrentlyFilled > percentToExpand){
+            ExpandRoom();
+        }
+    }
+
+    public void ExpandRoom()
+    {
+
+    }
+
+    public void AddMoney(int add)
+    {
+        money += add;
+    }
+
+    public void SpendMoney(int sub)
+    {
+        money -= sub;
+        if (money < 0)
+            money = 0;
     }
 }
