@@ -14,12 +14,17 @@ public class EnemyHealth : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
+        currentHealth -= damage;
 
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
     }
 
     public void Death()
     {
-
+            Destroy(gameObject);
     }
 	
 	// Update is called once per frame
