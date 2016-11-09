@@ -51,7 +51,7 @@ public class EnemyHealth : MonoBehaviour {
         if(!isInvincible)
         {
             GameObject blood = bloodList[Random.Range(0, bloodList.Length)];
-            Instantiate(blood, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            Instantiate(blood, new Vector3(transform.position.x, transform.position.y, 1), Quaternion.identity);
         }
     }
 }
