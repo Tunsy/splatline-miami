@@ -38,10 +38,10 @@ GameObject:
   - 4: {fileID: 4000010609148300}
   - 212: {fileID: 212000012549687894}
   - 114: {fileID: 114000011640664960}
-  - 50: {fileID: 50000010329137594}
   - 58: {fileID: 58000011857484936}
   - 114: {fileID: 114000011567753468}
   - 114: {fileID: 114000013976082594}
+  - 50: {fileID: 50000010599157562}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -138,7 +138,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010609148300}
   m_RootOrder: 0
---- !u!50 &50000010329137594
+--- !u!50 &50000010599157562
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0365dfde4d291e748bd36f7698daae11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentMoney: 0
 --- !u!114 &114000014182969010
 MonoBehaviour:
   m_ObjectHideFlags: 1

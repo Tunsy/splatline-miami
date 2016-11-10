@@ -39,7 +39,7 @@ public class Bullet : MonoBehaviour {
             //Take Damage
             EnemyHealth health = other.gameObject.GetComponent<EnemyHealth>();
             health.TakeDamage(damage);
-            health.CalculateKnockback(GetComponent<Rigidbody2D>().velocity, 1);
+            health.CalculateKnockback(GetComponent<Rigidbody2D>().velocity, knockbackStrength);
 
             Destroy(gameObject);
         }
