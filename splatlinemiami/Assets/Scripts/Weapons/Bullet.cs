@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour {
 
     public int damage;
     public float bulletSpeed;
+    public float knockbackStrength;
     private float timer;
     private float despawnTime;
 
@@ -38,7 +39,7 @@ public class Bullet : MonoBehaviour {
             //Take Damage
             EnemyHealth health = other.gameObject.GetComponent<EnemyHealth>();
             health.TakeDamage(damage);
-            health.SplatterBlood(); // TODO: Encapsulate in takeDamage()
+            health.CalculateKnockback(GetComponent<Rigidbody2D>().velocity, 1);
 
             Destroy(gameObject);
         }
