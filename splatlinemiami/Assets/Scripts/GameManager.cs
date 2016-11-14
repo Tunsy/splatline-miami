@@ -19,16 +19,22 @@ public class GameManager : MonoBehaviour
     private float timer;
     public float roundTime;
 
+    // Grid
     public BloodTile bloodTile;
     public Transform tileGrid;
     private BloodTile[,] bloodyTiles;
-    private int currentLevel;
     public int totalBloodCount;
     public int percentToExpand;
-    
-    // Offset in tiles
     public float xTileOffset;
     public float yTileOffset;
+    public int startingWidth;
+    public int startingHeight;
+
+    // Rooms
+    public GameObject[] maps;
+    public GameObject currentMap;
+    private int currentLevel;
+    private int maxLevel;
 
     //
     public int money;
@@ -39,11 +45,12 @@ public class GameManager : MonoBehaviour
         currentState = StateType.PLAYING;
         yTileOffset *= -1;
         currentLevel = 0;
+        maxLevel = maps.GetLength(0) - 1;
         money = 0;
 
-        Vector2 gridSize = calculateGridSize(6,6,4);
-        bloodyTiles = new BloodTile[(int)gridSize.x,(int)gridSize.y];
-        GenerateBloodTiles();
+        // Create map and grid
+        Instantiate(maps[currentLevel], new Vector3(0, 0, 0), Quaternion.identity);
+        CreateGrid(startingWidth, startingHeight, 4);
     }
 
     public void Update()
@@ -71,11 +78,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private Vector2 calculateGridSize(int length, int height, int divisions)
+    private Vector2 CalculateGridSize(int length, int height, int divisions)
     {
         int gridLength = (length + currentLevel) * divisions;
         int gridHeight = (height + currentLevel) * divisions;
         return new Vector2(gridLength, gridHeight);
+    }
+
+    private void CreateGrid(int length, int height, int divisions)
+    {
+        Vector2 gridSize = CalculateGridSize(length, height, divisions);
+        bloodyTiles = new BloodTile[(int)gridSize.x, (int)gridSize.y];
+        GenerateBloodTiles();
     }
 
     public void GenerateBloodTiles()
@@ -94,38 +108,36 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //public bool CheckBloodTiles(int percentFilled)
-    //{
-    //    int count = 0;
-    //    int totalSize = bloodyTiles.GetLength(0) * bloodyTiles.GetLength(1);
-
-    //    for (int i = 0; i < bloodyTiles.GetLength(0); i++)
-    //    {
-    //        for(int j = 0; j < bloodyTiles.GetLength(1); j++)
-    //        {
-    //            if(bloodyTiles[i,j].isBloody == true)
-    //            {
-    //                count++;
-    //            }
-    //        }
-    //    }
-    //    return false;
-    //}
-
     public void CheckBloodTiles()
     {
         int totalSize = bloodyTiles.GetLength(0) * bloodyTiles.GetLength(1);
         float percentCurrentlyFilled = ((float)totalBloodCount / totalSize)*100;
-        Debug.Log(percentCurrentlyFilled);
 
         if (percentCurrentlyFilled > percentToExpand){
+            percentCurrentlyFilled = 0;
             ExpandRoom();
         }
     }
 
     public void ExpandRoom()
     {
+        if (currentLevel < maxLevel)
+        {
+            currentLevel++;
 
+            // Destroy old grid and create new grid 
+            for (int i = 0; i < tileGrid.transform.childCount; i++)
+            {
+                Transform currentTile = tileGrid.transform.GetChild(i);
+                Destroy(currentTile.gameObject);
+            }
+            CreateGrid(startingWidth + (3 * currentLevel), startingHeight + (3 * currentLevel), 4);
+            totalBloodCount = 0;
+
+            // Destory old map and create new map
+            Destroy(FindObjectOfType<Tiled2Unity.TiledMap>().gameObject);
+            Instantiate(maps[currentLevel], new Vector3(0, 0, 0), Quaternion.identity);
+        }
     }
 
     public void AddMoney(int add)

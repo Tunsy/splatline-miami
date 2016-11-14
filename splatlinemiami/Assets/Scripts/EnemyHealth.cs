@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
 
     private float invincibilityTime;
     private float invincibilityTimer;
-    private bool isInvincible;
+    public bool isInvincible;
 
     private Rigidbody2D rb;
 
@@ -42,14 +42,18 @@ public class EnemyHealth : MonoBehaviour
     // TODO: Take in account of invincibility
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-
-        if (currentHealth <= 0)
+        if(!isInvincible)
         {
-            Death();
-        }
+            currentHealth -= damage;
+            if (currentHealth <= 0)
+            {
+                Death();
+            }
 
-        SplatterBlood();
+            SplatterBlood();
+
+            isInvincible = true;
+        }
     }
 
     public void Death()
@@ -59,12 +63,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void SplatterBlood()
     {
-        if (!isInvincible)
-        {
-            GameObject blood = bloodList[Random.Range(0, bloodList.Length)];
-            Instantiate(blood, new Vector3(transform.position.x, transform.position.y, 1), Quaternion.identity);
-        }
-
+        GameObject blood = bloodList[Random.Range(0, bloodList.Length)];
+        Instantiate(blood, new Vector3(transform.position.x, transform.position.y, 1), Quaternion.identity);
     }
 
     public void CalculateKnockback(Vector2 knockbackDirection, float knockbackStrength)

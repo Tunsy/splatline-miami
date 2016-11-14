@@ -56,7 +56,14 @@ MonoBehaviour:
   bloodTile: {fileID: 0}
   tileGrid: {fileID: 0}
   totalBloodCount: 0
-  percentToExpand: 0
+  percentToExpand: 10
   xTileOffset: 3
   yTileOffset: 3
+  startingWidth: 6
+  startingHeight: 6
+  maps:
+  - {fileID: 1000011861572212, guid: d848212c048efaf4cab0fd431f554e5b, type: 2}
+  - {fileID: 1000014064110836, guid: b379fba82fb247d4bb91bf20d107322c, type: 2}
+  - {fileID: 1000012004986626, guid: a3bddb01069688142a938ff91cdb2eca, type: 2}
+  currentMap: {fileID: 0}
   money: 0

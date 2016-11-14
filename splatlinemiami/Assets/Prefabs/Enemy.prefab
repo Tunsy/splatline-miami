@@ -52,7 +52,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013210494512}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -60,7 +60,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61000010887272980
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -94,6 +94,7 @@ MonoBehaviour:
   - {fileID: 1000012344734208, guid: 9a4e67ced6a04cf4fa1c3faae15f1110, type: 2}
   - {fileID: 1000012588686132, guid: a777d0e3d988fd74b9a60486dc782e07, type: 2}
   - {fileID: 1000011762187556, guid: d5b5d85840bed954f91af8ac6d006a05, type: 2}
+  isInvincible: 0
 --- !u!114 &114000012371438970
 MonoBehaviour:
   m_ObjectHideFlags: 1

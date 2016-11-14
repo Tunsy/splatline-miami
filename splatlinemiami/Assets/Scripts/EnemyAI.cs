@@ -20,5 +20,10 @@ public class EnemyAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         targetCoords = targetPosition.transform.position;
+        Vector2 targetDirection = targetCoords - transform.position;
+
+
+        //transform.LookAt(targetCoords);
+        transform.position += transform.TransformDirection(targetDirection.normalized) * 0.02f;
     }
 }
