@@ -14,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
     public bool isInvincible;
 
     private Rigidbody2D rb;
+    private CameraShake shake;
 
     // Use this for initialization
     void Start()
@@ -22,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
         invincibilityTime = 0.25f;
         isInvincible = false;
         rb = GetComponent<Rigidbody2D>();
+        shake = FindObjectOfType<CameraShake>();
     }
 
     void Update()
@@ -51,6 +53,7 @@ public class EnemyHealth : MonoBehaviour
             }
 
             SplatterBlood();
+            shake.ShakeCamera(10f, .2f);
 
             isInvincible = true;
         }
