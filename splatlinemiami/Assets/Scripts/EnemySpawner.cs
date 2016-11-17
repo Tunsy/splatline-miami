@@ -19,10 +19,13 @@ public class EnemySpawner : MonoBehaviour {
 	void Update () {
         currentTimer -= Time.deltaTime;
 
-        if(currentTimer <= 0 )
+        if (currentTimer <= 0)
         {
-            Instantiate(enemy, new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y + Random.Range(-2, 2), 0), Quaternion.identity);
-            currentTimer = Random.Range(minTime, maxTime);
+            for (int i = 0; i <= (int)Random.Range(0, 4); i++)
+            { 
+                Instantiate(enemy, new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y + Random.Range(-2, 2), 0), Quaternion.identity);
+                currentTimer = Random.Range(minTime, maxTime);
+            }
         }
 	}
 }

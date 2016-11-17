@@ -47,6 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BloodSplatter.cs" />
      <Compile Include="Assets\Scripts\BloodTile.cs" />
+     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
