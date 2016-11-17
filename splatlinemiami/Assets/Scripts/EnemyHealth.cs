@@ -68,6 +68,7 @@ public class EnemyHealth : MonoBehaviour
     {
         GameObject blood = bloodList[Random.Range(0, bloodList.Length)];
         Instantiate(blood, new Vector3(transform.position.x, transform.position.y, 1), Quaternion.identity);
+        GameManager.Instance.CheckBloodTiles();
     }
 
     public void CalculateKnockback(Vector2 knockbackDirection, float knockbackStrength)

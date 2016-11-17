@@ -3,15 +3,6 @@ using System.Collections;
 
 public class BloodSplatter : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -22,7 +13,6 @@ public class BloodSplatter : MonoBehaviour {
             {
                 bloodTile.isBloody = true;
                 GameManager.Instance.totalBloodCount++;
-                GameManager.Instance.CheckBloodTiles();
             }
         }
     }

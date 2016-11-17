@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
             CreateGrid(startingWidth + (3 * currentLevel), startingHeight + (3 * currentLevel), 4);
             totalBloodCount = 0;
 
-            // Destory old map and create new map
+            // Destroy old map and create new map
             Destroy(FindObjectOfType<Tiled2Unity.TiledMap>().gameObject);
             Instantiate(maps[currentLevel], new Vector3(0, 0, 0), Quaternion.identity);
         }
