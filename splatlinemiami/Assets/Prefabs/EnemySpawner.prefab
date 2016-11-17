@@ -50,7 +50,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -67,6 +67,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1000013210494512, guid: 15444fd0fdc0b544c958f571e4a0ef43, type: 2}
-  currentTimer: 0
-  maxTime: 1
-  minTime: 4
+  currentTimer: 1.6766433
+  maxTime: 4
+  minTime: 1

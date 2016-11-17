@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour {
 
         if(currentTimer <= 0 )
         {
-            Instantiate(enemy, new Vector3(0, 0, 0), Quaternion.identity);
+            Instantiate(enemy, new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y + Random.Range(-2, 2), 0), Quaternion.identity);
             currentTimer = Random.Range(minTime, maxTime);
         }
 	}
