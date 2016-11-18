@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Weapon : MonoBehaviour {
+public class Weapon : MonoBehaviour
+{
 
     public Bullet bullet;
     public float fireCooldown;
     public AudioClip shootSound;
+    public AudioClip reloadSound;
     public int maxBulletCount;
+    public int reloadTime;
     private int currentBulletCount;
     private bool isReloading;
 
@@ -40,12 +43,23 @@ public class Weapon : MonoBehaviour {
 
     public void Reload()
     {
+        isReloading = true;
         //Start a timer
+        System.Timers.Timer atimer = new System.Timers.Timer();
+        atimer.AutoReset = false;
+        atimer.Elapsed += new System.Timers.ElapsedEventHandler(reloadBullet);
+        atimer.Interval = reloadTime;
+        atimer.Start();
+        if (reloadSound)
+        {
+            AudioSource.PlayClipAtPoint(reloadSound, transform.position);
+        }
 
-        //Play a reload sound
+    }
 
-        //Restart bullet count
-
-        //Be able to shoot again after timer ends
+    private void reloadBullet(object source, System.Timers.ElapsedEventArgs e)
+    {
+        currentBulletCount = maxBulletCount;
+        isReloading = false;
     }
 }
