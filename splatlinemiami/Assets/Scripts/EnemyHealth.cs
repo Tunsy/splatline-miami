@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
 
     private Rigidbody2D rb;
     private CameraShake shake;
+    public BloodSplatter currentBloodSplatterInstance;
 
     // Use this for initialization
     void Start()
@@ -39,6 +40,7 @@ public class EnemyHealth : MonoBehaviour
                 invincibilityTimer = invincibilityTime;
             }
         }
+
     }
 
     // TODO: Take in account of invincibility
@@ -67,7 +69,7 @@ public class EnemyHealth : MonoBehaviour
     public void SplatterBlood()
     {
         GameObject blood = bloodList[Random.Range(0, bloodList.Length)];
-        Instantiate(blood, new Vector3(transform.position.x, transform.position.y, 1), Quaternion.identity);
+        GameObject bloodInstance = (GameObject)Instantiate(blood, new Vector3(transform.position.x, transform.position.y, 1), Quaternion.identity);
         GameManager.Instance.CheckBloodTiles();
     }
 

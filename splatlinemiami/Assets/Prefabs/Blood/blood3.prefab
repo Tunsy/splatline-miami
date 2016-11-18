@@ -22,8 +22,8 @@ GameObject:
   - 212: {fileID: 212000011906694610}
   - 58: {fileID: 58000010562551964}
   - 114: {fileID: 114000010367524222}
-  - 50: {fileID: 50000010875551050}
-  m_Layer: 0
+  - 50: {fileID: 50000011691462238}
+  m_Layer: 13
   m_Name: blood3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &50000010875551050
+--- !u!50 &50000011691462238
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -51,10 +51,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012588686132}
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8664e0d28c73ebe439849d29e824ee61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasTile: 0
 --- !u!212 &212000011906694610
 SpriteRenderer:
   m_ObjectHideFlags: 1

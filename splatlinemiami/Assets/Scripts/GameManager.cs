@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     public BloodTile bloodTile;
     public Transform tileGrid;
     private BloodTile[,] bloodyTiles;
+    public List<BloodSplatter> bloodSplatters = new List<BloodSplatter>();
     public int totalBloodCount;
     public int percentToExpand;
     public float xTileOffset;
@@ -50,7 +52,9 @@ public class GameManager : MonoBehaviour
 
         // Create map and grid
         Instantiate(maps[currentLevel], new Vector3(0, 0, 0), Quaternion.identity);
-        CreateGrid(startingWidth, startingHeight, 4);
+        CreateGrid(startingWidth, startingHeight, 2);
+
+        InvokeRepeating("ClearBlood", 0, 1.0f);
     }
 
     public void Update()
@@ -63,6 +67,19 @@ public class GameManager : MonoBehaviour
         {
             timer = roundTime;
             currentState = StateType.SHOP;
+        }
+    }
+
+    public void ClearBlood()
+    {
+        BloodSplatter[] splatters = FindObjectsOfType<BloodSplatter>();
+        foreach(BloodSplatter currentSplatter in splatters)
+        {
+            if (!currentSplatter.hasTile)
+            {
+                Destroy(currentSplatter.GetComponent<Rigidbody2D>());
+                Destroy(currentSplatter);
+            }
         }
     }
 
@@ -131,7 +148,7 @@ public class GameManager : MonoBehaviour
                 Transform currentTile = tileGrid.transform.GetChild(i);
                 Destroy(currentTile.gameObject);
             }
-            CreateGrid(startingWidth + (3 * currentLevel), startingHeight + (3 * currentLevel), 4);
+            CreateGrid(startingWidth + (2 * currentLevel), startingHeight + (2 * currentLevel), 2);
             totalBloodCount = 0;
 
             // Destroy old map and create new map
