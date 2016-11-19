@@ -4,6 +4,18 @@ using System.Collections;
 public class AttackController : MonoBehaviour {
 
     public Weapon currentWeapon;
+    public Weapon[] weapons;
+    private KeyCode[] keyCodes = {
+         KeyCode.Alpha1,
+         KeyCode.Alpha2,
+         KeyCode.Alpha3,
+         KeyCode.Alpha4,
+         KeyCode.Alpha5,
+         KeyCode.Alpha6,
+         KeyCode.Alpha7,
+         KeyCode.Alpha8,
+         KeyCode.Alpha9,
+     };
 
     private float timer;
 
@@ -20,9 +32,10 @@ public class AttackController : MonoBehaviour {
         currentWeapon = GetComponentInChildren<Weapon>();
         timer = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         timer += Time.deltaTime;
 
         // Check if the player is holding down a click and shoot if the cooldown is over
@@ -30,7 +43,16 @@ public class AttackController : MonoBehaviour {
         {
             Shoot();
         }
-	}
+
+        // Check for weapon switcher
+        for (int i = 0; i < keyCodes.Length; i++)
+        {
+            if (Input.GetKeyDown(keyCodes[i]) && weapons[i] != null)
+            {
+                currentWeapon = weapons[i];
+            }
+        }
+    }
 
     void Shoot()
     {

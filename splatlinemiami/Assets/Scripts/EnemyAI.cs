@@ -24,6 +24,6 @@ public class EnemyAI : MonoBehaviour {
 
 
         //transform.LookAt(targetCoords);
-        transform.position += transform.TransformDirection(targetDirection.normalized) * 0.02f;
+        //transform.position += transform.TransformDirection(targetDirection.normalized) * 0.02f;
     }
 }

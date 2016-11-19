@@ -208,7 +208,9 @@ MonoBehaviour:
   bullet: {fileID: 114000012226278898, guid: 77d9686e64d88dd40952f90d3d670d0f, type: 2}
   fireCooldown: 0.5
   shootSound: {fileID: 8300000, guid: c596f9bb95a763542a2b503b4cfdd0ab, type: 3}
-  maxBulletCount: 0
+  reloadSound: {fileID: 0}
+  maxBulletCount: 100
+  reloadTime: 1
 --- !u!114 &114000013034855510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -223,7 +225,9 @@ MonoBehaviour:
   bullet: {fileID: 114000012226278898, guid: 77d9686e64d88dd40952f90d3d670d0f, type: 2}
   fireCooldown: 1.25
   shootSound: {fileID: 8300000, guid: 9eace8a864b3116468269a1d110d73aa, type: 3}
-  maxBulletCount: 0
+  reloadSound: {fileID: 0}
+  maxBulletCount: 100
+  reloadTime: 1
   bulletsPerShot: 8
   spreadRange: 10
 --- !u!114 &114000013976082594
@@ -252,7 +256,9 @@ MonoBehaviour:
   bullet: {fileID: 114000012226278898, guid: 77d9686e64d88dd40952f90d3d670d0f, type: 2}
   fireCooldown: 0.1
   shootSound: {fileID: 8300000, guid: f86f4236bd1b8864e8186401a4c18bb5, type: 3}
-  maxBulletCount: 0
+  reloadSound: {fileID: 0}
+  maxBulletCount: 100
+  reloadTime: 1
 --- !u!212 &212000011365004734
 SpriteRenderer:
   m_ObjectHideFlags: 1
