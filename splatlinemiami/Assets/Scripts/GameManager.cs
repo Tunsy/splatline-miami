@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public StateType currentState;
 
-    private float timer;
+    public float timer;
     public float roundTime;
 
     // Grid
