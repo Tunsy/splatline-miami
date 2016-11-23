@@ -1,0 +1,255 @@
+[33mcommit a8a9f44572e2449e97cb865ccb5ef8be7d80a67e[m
+Author: carminechoi <carmine.choi@gmail.com>
+Date:   Mon Nov 21 11:56:04 2016 -0800
+
+    worked on timer, not finished yet
+
+[33mcommit 493670faba289e42b1e2bb37197dff87549b1aaa[m
+Author: Nhan Phan <nhantp1@uci.edu>
+Date:   Fri Nov 18 04:56:54 2016 -0800
+
+    Add reload
+
+[33mcommit 0c1d1c8aa8fd04bc5b908c691d69f70402e0c789[m
+Author: carminechoi <carmine.choi@gmail.com>
+Date:   Thu Nov 17 14:18:15 2016 -0800
+
+    tweaking/mapFixing/littleBalance
+
+[33mcommit 7e8abcaf0e0b937afab453737d1492ccb454aaff[m
+Merge: bb97f77 67c3e8e
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Thu Nov 17 13:23:43 2016 -0800
+
+    Fix merge conflict with enemy
+
+[33mcommit bb97f771d17811bbd20f1f7e5e063ef1089f2922[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Thu Nov 17 13:19:12 2016 -0800
+
+    Add music
+
+[33mcommit 67c3e8ee24fbfa052fc64304ae4f6acbe29779a8[m
+Author: carminechoi <carmine.choi@gmail.com>
+Date:   Thu Nov 17 13:17:28 2016 -0800
+
+    added enemy spawner
+
+[33mcommit df33241c35eeaf6659bb9c14db297ccdfb904f51[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Mon Nov 14 15:02:51 2016 -0800
+
+    Add camera follow and camera shake
+
+[33mcommit 6c75380e47e2d12e48d9770f909cdc736ca6c744[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Mon Nov 14 14:24:34 2016 -0800
+
+    Create room expansion functionality
+
+[33mcommit 627fe40bbe0d31402ed3d03a2fc8cc61b9bddae2[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Wed Nov 9 17:20:18 2016 -0800
+
+    Fix blood, fix physics, fix knockback
+
+[33mcommit df3065ca7c2fc1cb28cc33c9ac0b8f31d1636954[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Wed Nov 9 16:59:53 2016 -0800
+
+    Start on bullet knockback
+
+[33mcommit 5e612e2b8694a41e85898915b87a3a58670939eb[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Nov 8 17:08:41 2016 -0800
+
+    Stub out enemy AI and enmy spawner class
+
+[33mcommit 9fbeedd3b9582c7555af5b74543263996378c1b2[m
+Author: carminechoi <carmine.choi@gmail.com>
+Date:   Tue Nov 8 16:20:50 2016 -0800
+
+    added enemy health, fixed blood layers/collisions2
+
+[33mcommit 221aa7d83d3f9f7c6e84890e0d61a69497d5d7a8[m
+Merge: 559cdad 5432a48
+Author: carminechoi <carmine.choi@gmail.com>
+Date:   Tue Nov 8 16:10:26 2016 -0800
+
+    Merge branch 'master' of https://github.com/Tunsy/splatline-miami
+
+[33mcommit 559cdadf3ee289794575addd95cc3a3bdbdfa524[m
+Author: carminechoi <carmine.choi@gmail.com>
+Date:   Tue Nov 8 16:10:16 2016 -0800
+
+    take damage to enemies
+
+[33mcommit 5432a481b5afb18a66aaa5d86537baef7006fc9d[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Nov 8 16:02:00 2016 -0800
+
+    Splatter grid
+
+[33mcommit dde82fffee49260f0657b58a05cfc3788f989f7b[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Nov 8 01:49:33 2016 -0800
+
+    Implement invincibility timer and the ability to splatter blood randomly
+
+[33mcommit 4f0fb0fbe5912fde97d15ca35526bd6ff0e855c1[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Wed Nov 2 16:34:31 2016 -0700
+
+    Create the grid generation for the blood tile checking
+
+[33mcommit 3f7536ae4a185685415806ceb772d178ed915c3a[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Wed Nov 2 11:00:16 2016 -0700
+
+    Import character sprites and fix explosion prefab
+
+[33mcommit 296177e97f1f727d2c8d85d0001f950c1a9ad364[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Nov 1 13:41:15 2016 -0700
+
+    Create a game manager that keeps track of time
+
+[33mcommit 3a1929e01c9ec62f0b1db2bd54b9564604c85cd4[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Mon Oct 31 15:51:56 2016 -0700
+
+    Import tiled and test map with collisions
+
+[33mcommit bb406f4b1ad124283f949bbb6a69b3385a607107[m
+Merge: 3fe63f5 42b630f
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Fri Oct 28 11:16:04 2016 -0700
+
+    Merge branch 'master' of https://github.com/Tunsy/splatline-miami
+
+[33mcommit 3fe63f5a55744e7bcfaf71a8a47938f0dd6b147b[m
+Merge: 00b14db 1a039b4
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Thu Oct 27 17:07:08 2016 -0700
+
+    Merge branch 'guns'
+
+[33mcommit 1a039b4455c73fbb70b2b9869d3cbfd36d8cc334[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Thu Oct 27 17:06:59 2016 -0700
+
+    Fix compile error with explosion and create explosion prefab
+
+[33mcommit c3606cc53b4428463e2ef15cd2436bac181b6c85[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Thu Oct 27 16:55:34 2016 -0700
+
+    Stub out explosions and reloading
+
+[33mcommit 42b630f8e96354e649abbedb00eb98a8fee5b96e[m
+Merge: 00b14db cb40cc9
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Wed Oct 26 00:25:53 2016 -0700
+
+    Merge pull request #5 from Tunsy/guns
+    
+    Guns make sounds. Create shotguns
+
+[33mcommit cb40cc97018e83e6be8c55aa782a8d8cd1f12f18[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Wed Oct 26 00:23:49 2016 -0700
+
+    Guns make sounds. Create shotguns
+
+[33mcommit 00b14db270104d935683e6eb136452b05257630e[m
+Merge: f1349cf 0d7e090
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Oct 25 23:23:09 2016 -0700
+
+    Merge pull request #4 from Tunsy/guns
+    
+    Guns
+
+[33mcommit 0d7e090415a580ef00e121ea111b78587028cbb7[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Oct 25 23:18:43 2016 -0700
+
+    Fix untracked files
+
+[33mcommit c11ec73ae559412e80dd153b741e210f2eede9d5[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Oct 25 23:17:33 2016 -0700
+
+    Git ignore shenanigans
+
+[33mcommit ac9dc1c577fdf6e5ae52bf267ea799ba2d24f718[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Oct 25 23:04:32 2016 -0700
+
+    Add random bullet spread and sound FX
+
+[33mcommit f1349cfcaf14f1c31a524fecf0e370e2127cda55[m
+Merge: a077518 94285d7
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Oct 25 19:51:00 2016 -0700
+
+    Merge pull request #3 from Tunsy/guns
+    
+    Fix cached git ignore
+
+[33mcommit 94285d7d698feb3f8dfa038b17ecbaa32418fb78[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Oct 25 19:49:51 2016 -0700
+
+    Fix cached git ignore
+
+[33mcommit a077518922c99d11aefc6be79b8939e016014437[m
+Merge: ccb94e9 45ddfc4
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Oct 25 19:48:51 2016 -0700
+
+    Merge pull request #2 from Tunsy/guns
+    
+    Tweak bullet and add machine gun
+
+[33mcommit 45ddfc4110a42c6a6a82889a308f611289ea0547[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Oct 25 19:44:38 2016 -0700
+
+    Tweak bullet and add machine gun
+
+[33mcommit ccb94e96020e9ed4f99130f68e0ce5c8c4085542[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Oct 25 17:22:27 2016 -0700
+
+    Update gitignore and prefabs
+
+[33mcommit e6c9731250ec535964115cb61da0db843fe41a8a[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Oct 25 17:00:38 2016 -0700
+
+    Stub out enemy classes
+
+[33mcommit 7d300f2606e637ef67d3984d3322301667e27d96[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Mon Oct 24 15:40:46 2016 -0700
+
+    Create bullets and shooting collisions
+
+[33mcommit 24c8faa090f76e21ca7398dcedf0bbf2b8a1fc71[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Tue Oct 18 17:49:52 2016 -0700
+
+    Fix settings and gitignore
+
+[33mcommit c500817df6171b152eca08981d251a661bd5b071[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Mon Oct 17 15:17:02 2016 -0700
+
+    Create initial directories and project
+
+[33mcommit 025a68480b60f0e2f21dd2775273a0ebab7ddb39[m
+Author: Johnny Nguyen <jonthnngyn@gmail.com>
+Date:   Mon Oct 17 15:09:34 2016 -0700
+
+    Initial commit

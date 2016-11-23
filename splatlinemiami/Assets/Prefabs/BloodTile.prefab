@@ -50,11 +50,11 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.125, y: -0.125}
+  m_Offset: {x: 0.25, y: -0.25}
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.25}
+  m_Size: {x: 0.5, y: 0.5}
 --- !u!114 &114000011724879810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBloody: 0
-  xSize: 0.25
-  ySize: 0.25
+  xSize: 0.5
+  ySize: 0.5
   x: 0
   y: 0

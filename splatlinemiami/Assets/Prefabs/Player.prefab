@@ -180,8 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c007c0050e414e14cacebc1db317fb5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 114000010597872382, guid: 9c4981e3bf3167a45a2356875ff12441,
-    type: 2}
+  currentWeapon: {fileID: 0}
 --- !u!114 &114000011640664960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -210,8 +209,8 @@ MonoBehaviour:
   fireCooldown: 0.5
   shootSound: {fileID: 8300000, guid: c596f9bb95a763542a2b503b4cfdd0ab, type: 3}
   reloadSound: {fileID: 0}
-  maxBulletCount: 0
-  reloadTime: 0
+  maxBulletCount: 100
+  reloadTime: 1
 --- !u!114 &114000013034855510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,8 +226,8 @@ MonoBehaviour:
   fireCooldown: 1.25
   shootSound: {fileID: 8300000, guid: 9eace8a864b3116468269a1d110d73aa, type: 3}
   reloadSound: {fileID: 0}
-  maxBulletCount: 0
-  reloadTime: 0
+  maxBulletCount: 100
+  reloadTime: 1
   bulletsPerShot: 8
   spreadRange: 10
 --- !u!114 &114000013976082594
@@ -258,8 +257,8 @@ MonoBehaviour:
   fireCooldown: 0.1
   shootSound: {fileID: 8300000, guid: f86f4236bd1b8864e8186401a4c18bb5, type: 3}
   reloadSound: {fileID: 0}
-  maxBulletCount: 0
-  reloadTime: 0
+  maxBulletCount: 100
+  reloadTime: 1
 --- !u!212 &212000011365004734
 SpriteRenderer:
   m_ObjectHideFlags: 1
