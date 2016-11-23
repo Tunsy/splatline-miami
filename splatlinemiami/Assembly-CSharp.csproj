@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Player\AttackController.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
+     <Compile Include="Assets\Scripts\StartGame.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\Wallet.cs" />
      <Compile Include="Assets\Scripts\Weapons\Bullet.cs" />

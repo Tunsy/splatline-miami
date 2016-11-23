@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour {
     {
         Time.timeScale = 0;
         score = GameManager.Instance.totalBloodCount;
+        GameManager.Instance.isGameOver = true;
 
     }
     // Update is called once per frame

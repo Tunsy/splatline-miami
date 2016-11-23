@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public float timer;
     public float roundTime;
 
+    public bool isGameOver;
+
     // Grid
     public BloodTile bloodTile;
     public Transform tileGrid;
@@ -55,6 +57,8 @@ public class GameManager : MonoBehaviour
         CreateGrid(startingWidth, startingHeight, 2);
 
         InvokeRepeating("ClearBlood", 0, 1.0f);
+
+        isGameOver = false;
     }
 
     public void Update()
