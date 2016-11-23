@@ -94,6 +94,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Imported\level1.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Imported\level2.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Imported\level3.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Imported\level4.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\minimalist.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\test1.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\test2.tiled2unity.xml" />
