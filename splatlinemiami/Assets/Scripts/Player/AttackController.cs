@@ -29,7 +29,7 @@ public class AttackController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         shootableMask = LayerMask.GetMask("Shootable");
-        currentWeapon = GetComponentInChildren<Weapon>();
+        currentWeapon = weapons[0];
         timer = 0;
 	}
 
