@@ -800,12 +800,12 @@ MonoBehaviour:
   bloodSplatters: []
   totalBloodCount: 0
   percentToExpand: 40
-  xTileOffset: 3
-  yTileOffset: 3
+  xTileOffset: 4
+  yTileOffset: 4
   startingWidth: 6
   startingHeight: 6
   maps:
-  - {fileID: 1000011861572212, guid: d848212c048efaf4cab0fd431f554e5b, type: 2}
+  - {fileID: 1000010748482266, guid: e38ad2ec856b0cf42820c7e0c0633ed3, type: 2}
   - {fileID: 1000012512987050, guid: 435bfb922b58f3b4e9a4ec268da21a1a, type: 2}
   - {fileID: 1000010521735962, guid: 5b76c4eceec330640b08f875204fe7b0, type: 2}
   - {fileID: 1000010710549214, guid: 9e4cdfcb57befb24ea03c0195bae182b, type: 2}
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812495955e452ec4688ea2a605ac16f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 0
+  timeLeft: 30
 --- !u!114 &1519834681 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000014182969010, guid: d368e8c82276c9d4b88ea617eeb8ad0c,
@@ -881,7 +881,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012324721064, guid: 15444fd0fdc0b544c958f571e4a0ef43, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.08348751
+      value: 4.48
       objectReference: {fileID: 0}
     - target: {fileID: 4000012324721064, guid: 15444fd0fdc0b544c958f571e4a0ef43, type: 2}
       propertyPath: m_LocalPosition.y
