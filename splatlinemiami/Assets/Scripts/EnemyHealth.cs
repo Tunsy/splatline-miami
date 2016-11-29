@@ -55,7 +55,7 @@ public class EnemyHealth : MonoBehaviour
             }
 
             SplatterBlood();
-            shake.ShakeCamera(10f, .2f);
+            //shake.ShakeCamera(10f, .2f);
 
             isInvincible = true;
         }

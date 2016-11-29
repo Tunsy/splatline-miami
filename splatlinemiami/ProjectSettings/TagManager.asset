@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Tiled
+    uniqueID: 916436977
+    locked: 0
   - name: Map
     uniqueID: 2237786773
     locked: 0
