@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011869989736}
   - 114: {fileID: 114000013127027914}
-  - 114: {fileID: 114000013833172962}
+  - 114: {fileID: 114000012744959850}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -41,6 +41,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &114000012744959850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010179367216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812495955e452ec4688ea2a605ac16f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLeft: 30
+  deadFont: {fileID: 12800000, guid: ffc5388145371744483ce36ed103bafd, type: 3}
 --- !u!114 &114000013127027914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,29 +68,20 @@ MonoBehaviour:
   currentState: 0
   timer: 0
   roundTime: 60
+  isGameOver: 0
   bloodTile: {fileID: 0}
   tileGrid: {fileID: 0}
+  bloodSplatters: []
   totalBloodCount: 0
   percentToExpand: 40
-  xTileOffset: 3
-  yTileOffset: 3
+  xTileOffset: 4
+  yTileOffset: 4
   startingWidth: 6
   startingHeight: 6
   maps:
-  - {fileID: 1000011861572212, guid: d848212c048efaf4cab0fd431f554e5b, type: 2}
-  - {fileID: 1000014064110836, guid: b379fba82fb247d4bb91bf20d107322c, type: 2}
-  - {fileID: 1000012004986626, guid: a3bddb01069688142a938ff91cdb2eca, type: 2}
+  - {fileID: 1000010748482266, guid: e38ad2ec856b0cf42820c7e0c0633ed3, type: 2}
+  - {fileID: 1000012512987050, guid: 435bfb922b58f3b4e9a4ec268da21a1a, type: 2}
+  - {fileID: 1000010521735962, guid: 5b76c4eceec330640b08f875204fe7b0, type: 2}
+  - {fileID: 1000010710549214, guid: 9e4cdfcb57befb24ea03c0195bae182b, type: 2}
   currentMap: {fileID: 0}
   money: 0
---- !u!114 &114000013833172962
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010179367216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a523c51ae4e6464e8f2e1e562d8c08b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeLeft: 10

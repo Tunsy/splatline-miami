@@ -27,7 +27,6 @@ public class EnemyHealth : MonoBehaviour
         isInvincible = false;
         rb = GetComponent<Rigidbody2D>();
         shake = FindObjectOfType<CameraShake>();
-        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()

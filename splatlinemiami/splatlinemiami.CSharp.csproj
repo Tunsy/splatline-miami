@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Player\AttackController.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\UI\GameOver.cs" />
     <Compile Include="Assets\Scripts\UI\QuitGame.cs" />
     <Compile Include="Assets\Scripts\UI\StartGame.cs" />
     <Compile Include="Assets\Scripts\Wallet.cs" />
