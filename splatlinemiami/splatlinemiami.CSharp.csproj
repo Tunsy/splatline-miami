@@ -95,7 +95,7 @@
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\SpritesAnimations\TiledShader.shader" />
+    <None Include="Assets\SpritesAnimations\tiles\TiledShader.shader" />
     <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\Imported\level1.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\level2.tiled2unity.xml" />

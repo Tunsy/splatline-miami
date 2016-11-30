@@ -14,6 +14,8 @@ public class EnemyHealth : MonoBehaviour
     public bool isInvincible;
 
     private Rigidbody2D rb;
+    public Sprite deadSprite;
+    private SpriteRenderer sr;
     private CameraShake shake;
     public BloodSplatter currentBloodSplatterInstance;
 
@@ -25,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
         isInvincible = false;
         rb = GetComponent<Rigidbody2D>();
         shake = FindObjectOfType<CameraShake>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
