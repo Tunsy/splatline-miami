@@ -23,8 +23,7 @@ public class EnemyAI : MonoBehaviour {
         {
             targetCoords = targetPosition.transform.position;
             Vector2 targetDirection = targetCoords - transform.position;
-            //transform.LookAt(targetCoords);
-            transform.position += transform.TransformDirection(targetDirection.normalized) * 0.02f;
+            //transform.position += transform.TransformDirection(targetDirection.normalized) * 0.02f;
         }
     }
 }

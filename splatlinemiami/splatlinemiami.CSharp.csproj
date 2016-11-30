@@ -77,8 +77,9 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Player\AttackController.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\StartGame.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\UI\QuitGame.cs" />
+    <Compile Include="Assets\Scripts\UI\StartGame.cs" />
     <Compile Include="Assets\Scripts\Wallet.cs" />
     <Compile Include="Assets\Scripts\Weapons\Bullet.cs" />
     <Compile Include="Assets\Scripts\Weapons\Explosion.cs" />
@@ -94,6 +95,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Imported\level1.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Imported\level2.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Imported\level3.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Imported\level4.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\minimalist.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\test1.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\test2.tiled2unity.xml" />
