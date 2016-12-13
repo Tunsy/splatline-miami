@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
     public void Start()
     {
         currentBulletCount = maxBulletCount;
+        isReloading = false;
     }
 
     public virtual void Shoot()

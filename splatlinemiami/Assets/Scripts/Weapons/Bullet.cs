@@ -4,16 +4,20 @@ using System.Collections;
 public class Bullet : MonoBehaviour {
 
     public int damage;
+    public Vector2 angle;
     public float bulletSpeed;
     public float knockbackStrength;
     private float timer;
     private float despawnTime;
+    protected Rigidbody2D rb;
 
 	// Use this for initialization
 	void Start ()
     {
+        rb = GetComponent<Rigidbody2D>();
         timer = 0;
         despawnTime = 4;
+        angle = rb.velocity.normalized;
 	}
 	
 	// Update is called once per frame
@@ -27,7 +31,7 @@ public class Bullet : MonoBehaviour {
         }
 	}
 
-    void OnCollisionEnter2D(Collision2D other)
+    public virtual void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Map"))
         {
