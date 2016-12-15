@@ -47,6 +47,9 @@ TagManager:
   - name: Blood
     uniqueID: 3797372185
     locked: 0
+  - name: Bullets
+    uniqueID: 3857933563
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

@@ -9,10 +9,12 @@ public class Player : MonoBehaviour {
     private Quaternion targetRotation;
     private Rigidbody2D rb;
 
+    public float currentRotation;
+    public bool isMoving;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponentInParent<Rigidbody2D>();
         cam = Camera.main;
     }
 
@@ -26,9 +28,11 @@ public class Player : MonoBehaviour {
         Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         Quaternion rot = Quaternion.LookRotation(transform.position - mousePos, Vector3.forward);
         transform.rotation = rot;
-        transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
+        currentRotation = transform.rotation.eulerAngles.z;
+        transform.eulerAngles = new Vector3(0, 0, currentRotation);
         rb.angularVelocity = 0;
     }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -36,5 +40,6 @@ public class Player : MonoBehaviour {
         float y = Input.GetAxis("Vertical");
 
         rb.velocity = new Vector2(x * speed, y * speed);
+        isMoving = !(rb.velocity.x == 0 && rb.velocity.y == 0);
     }
 }
