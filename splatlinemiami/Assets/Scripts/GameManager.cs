@@ -15,11 +15,10 @@ public class GameManager : MonoBehaviour
         SHOP,    //Once, on start of each player's turn
     };
 
+    // Game state
     public StateType currentState;
-
     public float timer;
     public float roundTime;
-
     public bool isGameOver;
 
     // Grid
@@ -33,6 +32,8 @@ public class GameManager : MonoBehaviour
     public float yTileOffset;
     public int startingWidth;
     public int startingHeight;
+    public AudioClip levelUpSound;
+    AudioSource audio;
 
     // Rooms
     public GameObject[] maps;
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
         currentLevel = 0;
         maxLevel = maps.GetLength(0) - 1;
         money = 0;
+        audio = GetComponent<AudioSource>();
 
         // Create map and grid
         Instantiate(maps[currentLevel], new Vector3(0, 0, 0), Quaternion.identity);
@@ -145,6 +147,8 @@ public class GameManager : MonoBehaviour
         if (currentLevel < maxLevel)
         {
             currentLevel++;
+            if(levelUpSound)
+                AudioSource.PlayClipAtPoint(levelUpSound, Camera.main.transform.position, 1f);
 
             // Destroy old grid and create new grid 
             for (int i = 0; i < tileGrid.transform.childCount; i++)

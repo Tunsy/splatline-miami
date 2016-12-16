@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013210494512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.85, y: -6.38, z: 0}
+  m_LocalPosition: {x: 5.4279737, y: -6.7482367, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -116,6 +116,14 @@ MonoBehaviour:
   isInvincible: 0
   deadSprite: {fileID: 0}
   currentBloodSplatterInstance: {fileID: 0}
+  deathSounds:
+  - {fileID: 8300000, guid: c7d6a580bf2f73f4f8b09ff91ff4efd3, type: 3}
+  - {fileID: 8300000, guid: fc96afb2ba842e146945a914ca609692, type: 3}
+  - {fileID: 8300000, guid: de07ea54340a75a45aa5801370d850f5, type: 3}
+  - {fileID: 8300000, guid: 67b16069ace05e74ab72d6960dd7abb8, type: 3}
+  hurtSounds:
+  - {fileID: 8300000, guid: 9b12b736c65731c458609590faf501a9, type: 3}
+  - {fileID: 8300000, guid: 8d2335aef1b4668428a9d3f48e0e59bd, type: 3}
 --- !u!114 &114000010799436980
 MonoBehaviour:
   m_ObjectHideFlags: 1

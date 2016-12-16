@@ -3,21 +3,28 @@ using System.Collections;
 
 public class EnemyHealth : MonoBehaviour
 {
-
+    // Health
     public int maxHealth;
     public int currentHealth;
     public int moneyValue;
     public GameObject[] bloodList;
 
+    // Invincibility
     private float invincibilityTime;
     private float invincibilityTimer;
     public bool isInvincible;
 
+    // Components
     private Rigidbody2D rb;
     public Sprite deadSprite;
     private SpriteRenderer sr;
     private CameraShaking shake;
     public BloodSplatter currentBloodSplatterInstance;
+
+    // Sounds
+    public AudioClip[] deathSounds;
+    public AudioClip[] hurtSounds;
+
 
     // Use this for initialization
     void Start()
@@ -51,13 +58,19 @@ public class EnemyHealth : MonoBehaviour
         if(!isInvincible)
         {
             currentHealth -= damage;
+
+            if (hurtSounds != null)
+            {
+                AudioSource.PlayClipAtPoint(hurtSounds[Random.Range(0, hurtSounds.Length)], Camera.main.transform.position, .2f);
+            }
+
             if (currentHealth <= 0)
             {
                 Death();
             }
 
             SplatterBlood();
-            shake.Shake(.15f, .15f);
+            shake.Shake(.1f, .15f);
 
             isInvincible = true;
         }
@@ -65,6 +78,10 @@ public class EnemyHealth : MonoBehaviour
 
     public void Death()
     {
+        if(deathSounds != null)
+        {
+            AudioSource.PlayClipAtPoint(deathSounds[Random.Range(0, deathSounds.Length)], Camera.main.transform.position, .8f);
+        }
         Destroy(gameObject);
     }
 
