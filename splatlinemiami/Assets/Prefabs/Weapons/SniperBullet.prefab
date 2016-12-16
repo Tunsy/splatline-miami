@@ -89,7 +89,7 @@ MonoBehaviour:
   angle: {x: 0, y: 0}
   bulletSpeed: 30
   knockbackStrength: 0.01
-  penetrationAmount: 3
+  penetrationAmount: 7
 --- !u!212 &212000011246951774
 SpriteRenderer:
   m_ObjectHideFlags: 1

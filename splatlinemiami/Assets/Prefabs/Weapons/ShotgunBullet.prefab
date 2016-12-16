@@ -22,9 +22,9 @@ GameObject:
   - 212: {fileID: 212000011246951774}
   - 61: {fileID: 61000013309962054}
   - 50: {fileID: 50000010503482530}
-  - 114: {fileID: 114000012226278898}
+  - 114: {fileID: 114000012744282194}
   m_Layer: 10
-  m_Name: Bullet
+  m_Name: ShotgunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ BoxCollider2D:
   m_Offset: {x: -0.09, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.12, y: 1.38}
---- !u!114 &114000012226278898
+--- !u!114 &114000012744282194
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -82,13 +82,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000014177622400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0caff4a9fbd13e043ae01536401fe74e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b5c0fe8e986d2d47ba86d3065391d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 15
   angle: {x: 0, y: 0}
   bulletSpeed: 30
   knockbackStrength: 0.01
+  penetrationAmount: 2
 --- !u!212 &212000011246951774
 SpriteRenderer:
   m_ObjectHideFlags: 1
