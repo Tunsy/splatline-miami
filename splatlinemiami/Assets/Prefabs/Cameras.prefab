@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013989173086}
-  - 114: {fileID: 114000010426272834}
   - 114: {fileID: 114000013158935088}
   m_Layer: 0
   m_Name: Cameras
@@ -39,8 +38,8 @@ GameObject:
   - 20: {fileID: 20000014038178646}
   - 92: {fileID: 92000013540293862}
   - 124: {fileID: 124000013793607182}
-  - 81: {fileID: 81000013347804486}
   - 114: {fileID: 114000012395658062}
+  - 81: {fileID: 81000013040240210}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -109,7 +108,7 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!81 &81000013347804486
+--- !u!81 &81000013040240210
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -123,26 +122,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013382034780}
   m_Enabled: 1
---- !u!114 &114000010426272834
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010419817684}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d52ea980483c484cb96e762b4c98bb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugMode: 0
-  shakeAmount: 0
-  shakeDuration: 0
-  shakePercentage: 0
-  startAmount: 0
-  startDuration: 0
-  isRunning: 0
-  smooth: 0
-  smoothAmount: 5
 --- !u!114 &114000012395658062
 MonoBehaviour:
   m_ObjectHideFlags: 1

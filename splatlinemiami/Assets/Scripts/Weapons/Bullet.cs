@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour {
         }
 	}
 
-    public virtual void OnCollisionEnter2D(Collision2D other)
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Map"))
         {

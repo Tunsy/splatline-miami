@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
         DEFAULT,      //Fall-back state, should never happen
         PLAYING,      //waiting for other player to finish his turn
         SHOP,    //Once, on start of each player's turn
+        GAMEOVER,
     };
 
     // Game state
@@ -33,7 +34,6 @@ public class GameManager : MonoBehaviour
     public int startingWidth;
     public int startingHeight;
     public AudioClip levelUpSound;
-    AudioSource audio;
 
     // Rooms
     public GameObject[] maps;
@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
     //
     public int money;
 
+    public GameObject gameoverMenu;
+
     public void Start()
     {
         timer =  roundTime;
@@ -52,7 +54,7 @@ public class GameManager : MonoBehaviour
         currentLevel = 0;
         maxLevel = maps.GetLength(0) - 1;
         money = 0;
-        audio = GetComponent<AudioSource>();
+        Time.timeScale = 1;
 
         // Create map and grid
         Instantiate(maps[currentLevel], new Vector3(0, 0, 0), Quaternion.identity);
@@ -65,14 +67,15 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-
-        timer -= Time.deltaTime;
-
-        // Go to the shop after the timer ends
-        if(timer <= 0)
+        if (!isGameOver)
         {
-            timer = roundTime;
-            currentState = StateType.SHOP;
+            timer -= Time.deltaTime;
+
+            // Go to the shop after the timer ends
+            if (timer <= 0)
+            {
+                timer = roundTime;
+            }
         }
     }
 

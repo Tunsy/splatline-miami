@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLeft: 60
   deadFont: {fileID: 12800000, guid: ffc5388145371744483ce36ed103bafd, type: 3}
-  infiniteTime: 1
+  infiniteTime: 0
 --- !u!114 &114000013127027914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,11 +74,12 @@ MonoBehaviour:
   tileGrid: {fileID: 0}
   bloodSplatters: []
   totalBloodCount: 0
-  percentToExpand: 10
+  percentToExpand: 60
   xTileOffset: 4
   yTileOffset: 4
   startingWidth: 6
   startingHeight: 6
+  levelUpSound: {fileID: 8300000, guid: a5010d69129a7324e82596ceef52f25d, type: 3}
   maps:
   - {fileID: 1000010748482266, guid: e38ad2ec856b0cf42820c7e0c0633ed3, type: 2}
   - {fileID: 1000012512987050, guid: 435bfb922b58f3b4e9a4ec268da21a1a, type: 2}
@@ -86,3 +87,4 @@ MonoBehaviour:
   - {fileID: 1000010710549214, guid: 9e4cdfcb57befb24ea03c0195bae182b, type: 2}
   currentMap: {fileID: 0}
   money: 0
+  gameoverMenu: {fileID: 0}

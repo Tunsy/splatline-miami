@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
 
     void Update()
     {
+        Move();
         ControlMouse();
     }
 
@@ -33,12 +34,10 @@ public class Player : MonoBehaviour {
         rb.angularVelocity = 0;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Move()
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-
         rb.velocity = new Vector2(x * speed, y * speed);
         isMoving = !(rb.velocity.x == 0 && rb.velocity.y == 0);
     }

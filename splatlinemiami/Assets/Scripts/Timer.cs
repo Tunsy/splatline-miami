@@ -34,11 +34,14 @@ public class Timer : MonoBehaviour
     }
     void OnGUI()
     {
+        GUIStyle myStyle = new GUIStyle();
+        myStyle.font = deadFont;
+        myStyle.normal.textColor = Color.red;
+        myStyle.fontSize = 50;
         GUI.skin.label.fontSize = 20;
-        GUI.skin.label.font = deadFont;
-        GUI.Label(new Rect(10, 10, 100, 100), "SCORE: " + GameManager.Instance.totalBloodCount * 10);
+        GUI.Label(new Rect(10, 10, 100, 100), "SCORE: " + GameManager.Instance.totalBloodCount * 10, myStyle);
         GUI.skin.label.fontSize = 40;
-        GUI.Label(new Rect(Screen.width / 2, 10, 200, 100), "" + (int)timeLeft);
+        GUI.Label(new Rect(Screen.width / 2, 10, 200, 100), "" + (int)timeLeft, myStyle);
 
     }
 }

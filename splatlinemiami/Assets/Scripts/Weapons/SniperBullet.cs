@@ -10,7 +10,7 @@ public class SniperBullet : Bullet
         rb.velocity = angle * bulletSpeed;
     }
 
-    public override void OnCollisionEnter2D(Collision2D other)
+    public override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Map"))
         {

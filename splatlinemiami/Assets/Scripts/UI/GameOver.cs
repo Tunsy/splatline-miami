@@ -16,6 +16,6 @@ public class GameOver : MonoBehaviour {
 
     public void RetryGame()
     {
-        SceneManager.LoadScene("mainscene");
+        SceneManager.LoadScene("titlescene");
     }
 }
