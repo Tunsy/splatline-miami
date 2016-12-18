@@ -55,7 +55,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013210494512}
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 30
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104e8febd3c0f384588fc06a615f88f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 10
   currentHealth: 0
   moneyValue: 10
   bloodList:
@@ -116,7 +116,7 @@ MonoBehaviour:
   - {fileID: 1000011762187556, guid: d5b5d85840bed954f91af8ac6d006a05, type: 2}
   isInvincible: 0
   deadSprite: {fileID: 0}
-  currentBloodSplatterInstance: {fileID: 0}
+  bloodBurst: {fileID: 1000010155796122, guid: 4323e19109411ea4895df7daaf428f04, type: 2}
   deathSounds:
   - {fileID: 8300000, guid: c7d6a580bf2f73f4f8b09ff91ff4efd3, type: 3}
   - {fileID: 8300000, guid: fc96afb2ba842e146945a914ca609692, type: 3}

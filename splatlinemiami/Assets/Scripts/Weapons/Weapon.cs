@@ -37,7 +37,7 @@ public class Weapon : MonoBehaviour
             currentBulletCount--;
             if (currentBulletCount <= 0)
             {
-                Reload();
+                //Reload();
             }
         }
     }

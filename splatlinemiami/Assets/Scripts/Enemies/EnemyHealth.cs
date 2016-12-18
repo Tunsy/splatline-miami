@@ -19,7 +19,8 @@ public class EnemyHealth : MonoBehaviour
     public Sprite deadSprite;
     private SpriteRenderer sr;
     private CameraShaking shake;
-    public BloodSplatter currentBloodSplatterInstance;
+    private BloodSplatter currentBloodSplatterInstance;
+    public GameObject bloodBurst;
     private EnemyMoveController movecontroller;
 
     // Sounds
@@ -84,6 +85,7 @@ public class EnemyHealth : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(deathSounds[Random.Range(0, deathSounds.Length)], Camera.main.transform.position, .8f);
         }
+        Instantiate(bloodBurst, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
