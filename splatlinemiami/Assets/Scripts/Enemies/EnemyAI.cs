@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour {
     private Vector3 targetCoords;
     [HideInInspector]
     public Vector2 targetDirection;
-    public bool isMoving;
+    private EnemyMoveController moveController;
 
 	// Use this for initialization
 	void Start () {
@@ -16,9 +16,8 @@ public class EnemyAI : MonoBehaviour {
         {
             targetPosition = FindObjectOfType<Player>().GetComponent<Transform>();
         }
-
-        isMoving = true;
         targetCoords = targetPosition.transform.position;
+        moveController = GetComponent<EnemyMoveController>();
 	}
 	
 	// Update is called once per frame
@@ -27,7 +26,7 @@ public class EnemyAI : MonoBehaviour {
         {
             targetCoords = targetPosition.transform.position;
             targetDirection = targetCoords - transform.position;
-            transform.position += transform.TransformDirection(targetDirection.normalized) * 0.02f;
+            moveController.UpdateMovement(targetDirection.normalized);
         }
     }
 }

@@ -5,12 +5,14 @@ public class EnemyAnimationController : MonoBehaviour {
 
     private EnemyAI enemyAI;
     private Animator anim;
+    private EnemyMoveController moveController;
 
 
 	// Use this for initialization
 	void Start () {
         enemyAI = GetComponent<EnemyAI>();
         anim = GetComponent<Animator>();
+        moveController = GetComponent<EnemyMoveController>();
 	}
 	
 	// Update is called once per frame
@@ -44,6 +46,6 @@ public class EnemyAnimationController : MonoBehaviour {
             }
         }
 
-        anim.SetBool("IsMoving", enemyAI.isMoving);
+        anim.SetBool("IsMoving", moveController.isMoving);
 	}
 }

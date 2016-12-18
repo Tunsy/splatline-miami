@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyAnimationController.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyMoveController.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\FBloodTile.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />

@@ -55,6 +55,9 @@ MonoBehaviour:
   bullet: {fileID: 114000012226278898, guid: 77d9686e64d88dd40952f90d3d670d0f, type: 2}
   fireCooldown: 0.1
   shootSound: {fileID: 8300000, guid: f86f4236bd1b8864e8186401a4c18bb5, type: 3}
+  reloadSound: {fileID: 0}
+  maxBulletCount: 1000
+  reloadTime: 1
 --- !u!212 &212000011585709410
 SpriteRenderer:
   m_ObjectHideFlags: 1

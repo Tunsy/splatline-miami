@@ -52,9 +52,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab36cb444750aa4fa624b603a9dcc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 114000012226278898, guid: 77d9686e64d88dd40952f90d3d670d0f, type: 2}
-  fireCooldown: 1.25
+  bullet: {fileID: 114000012744282194, guid: 666aa4d2c3a3d89419416e0bf23f5f96, type: 2}
+  fireCooldown: 1.2
   shootSound: {fileID: 8300000, guid: 9eace8a864b3116468269a1d110d73aa, type: 3}
+  reloadSound: {fileID: 0}
+  maxBulletCount: 1000
+  reloadTime: 0
   bulletsPerShot: 8
   spreadRange: 10
 --- !u!212 &212000011993563120

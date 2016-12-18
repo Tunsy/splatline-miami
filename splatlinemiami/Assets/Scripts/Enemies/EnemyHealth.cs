@@ -20,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
     private SpriteRenderer sr;
     private CameraShaking shake;
     public BloodSplatter currentBloodSplatterInstance;
+    private EnemyMoveController movecontroller;
 
     // Sounds
     public AudioClip[] deathSounds;
@@ -34,6 +35,7 @@ public class EnemyHealth : MonoBehaviour
         isInvincible = false;
         rb = GetComponent<Rigidbody2D>();
         shake = FindObjectOfType<CameraShaking>();
+        movecontroller = GetComponent<EnemyMoveController>();
     }
 
     void Update()
@@ -94,6 +96,6 @@ public class EnemyHealth : MonoBehaviour
 
     public void CalculateKnockback(Vector2 knockbackDirection, float knockbackStrength)
     {
-        rb.AddForce(knockbackDirection * knockbackStrength);
+        movecontroller.Knockback(knockbackDirection, knockbackStrength);
     }
 }
