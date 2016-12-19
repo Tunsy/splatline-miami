@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014177622400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.685814, y: -14.125961, z: 0}
+  m_LocalPosition: {x: -27.39, y: -0.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -71,7 +71,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.09, y: 0}
+  m_Offset: {x: 0, y: 0.75}
   serializedVersion: 2
   m_Size: {x: 0.12, y: 0.7}
 --- !u!114 &114000012744282194
@@ -86,9 +86,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
-  angle: {x: 0, y: 0}
   bulletSpeed: 30
   knockbackStrength: 0.5
+  bloodScale: 1
+  angle: {x: 0, y: 0}
   penetrationAmount: 2
 --- !u!212 &212000011246951774
 SpriteRenderer:
