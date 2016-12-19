@@ -21,7 +21,7 @@ public class SniperBullet : Bullet
         {
             //Take Damage
             EnemyHealth health = other.gameObject.GetComponent<EnemyHealth>();
-            health.TakeDamage(damage);
+            health.TakeDamage(damage, bloodScale);
             health.CalculateKnockback(GetComponent<Rigidbody2D>().velocity, knockbackStrength);
             penetrationAmount--;
         }

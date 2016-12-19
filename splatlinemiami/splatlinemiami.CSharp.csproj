@@ -75,7 +75,6 @@
     <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyMoveController.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpawner.cs" />
-    <Compile Include="Assets\Scripts\FBloodTile.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\ParticleSystemAutoDestroy.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationController.cs" />

@@ -4,9 +4,10 @@ using System.Collections;
 public class Bullet : MonoBehaviour {
 
     public int damage;
-    public Vector2 angle;
     public float bulletSpeed;
     public float knockbackStrength;
+    public float bloodScale;
+    public Vector2 angle;
     private float timer;
     private float despawnTime;
     protected Rigidbody2D rb;
@@ -42,7 +43,7 @@ public class Bullet : MonoBehaviour {
         {
             //Take Damage
             EnemyHealth health = other.gameObject.GetComponent<EnemyHealth>();
-            health.TakeDamage(damage);
+            health.TakeDamage(damage, bloodScale);
             health.CalculateKnockback(GetComponent<Rigidbody2D>().velocity, knockbackStrength);
 
             Destroy(gameObject);

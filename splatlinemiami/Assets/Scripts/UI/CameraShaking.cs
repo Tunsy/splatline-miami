@@ -17,16 +17,19 @@ public class CameraShaking : MonoBehaviour {
  
     void Update()
     {
-        if (shakeTime > 0)
+        if (!GameManager.Instance.isGameOver)
         {
-            cam.transform.localPosition = new Vector3(cam.transform.localPosition.x + Random.insideUnitCircle.x * shakeAmount, 
-                                                        cam.transform.localPosition.y + Random.insideUnitCircle.y * shakeAmount,
-                                                        cam.transform.localPosition.z);
-            shakeTime -= Time.deltaTime * decreaseFactor;
-        }
-        else
-        {
-            shakeTime = 0.0f;
+            if (shakeTime > 0)
+            {
+                cam.transform.localPosition = new Vector3(cam.transform.localPosition.x + Random.insideUnitCircle.x * shakeAmount,
+                                                            cam.transform.localPosition.y + Random.insideUnitCircle.y * shakeAmount,
+                                                            cam.transform.localPosition.z);
+                shakeTime -= Time.deltaTime * decreaseFactor;
+            }
+            else
+            {
+                shakeTime = 0.0f;
+            }
         }
     }
 

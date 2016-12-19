@@ -26,7 +26,7 @@ public class Explosion : MonoBehaviour {
 
         if(health != null)
         {
-            health.TakeDamage(4);
+            health.TakeDamage(4, 2f);
         }
     }
 }

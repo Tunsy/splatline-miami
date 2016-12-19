@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New Material
+  m_Name: Trees
   m_Shader: {fileID: 4800000, guid: b3eaf4eec60853849a0fa3c62ae39573, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1

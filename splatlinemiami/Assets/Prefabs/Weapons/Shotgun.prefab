@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 114000012744282194, guid: 666aa4d2c3a3d89419416e0bf23f5f96, type: 2}
-  fireCooldown: 1.2
+  fireCooldown: 1.4
   shootSound: {fileID: 8300000, guid: 9eace8a864b3116468269a1d110d73aa, type: 3}
   reloadSound: {fileID: 0}
   maxBulletCount: 1000

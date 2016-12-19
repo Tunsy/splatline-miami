@@ -56,23 +56,28 @@ public class EnemyHealth : MonoBehaviour
     }
 
     // TODO: Take in account of invincibility
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, float bloodScale)
     {
         if(!isInvincible)
         {
             currentHealth -= damage;
 
+            // Play sound
             if (hurtSounds != null)
             {
                 AudioSource.PlayClipAtPoint(hurtSounds[Random.Range(0, hurtSounds.Length)], Camera.main.transform.position, .2f);
             }
 
+            // Check for health. Splatter blood and shake camera for juiciness
             if (currentHealth <= 0)
             {
                 Death();
+                SplatterBlood(bloodScale * 1.7f);
             }
-
-            SplatterBlood();
+            else
+            {
+                SplatterBlood(bloodScale);
+            }
             shake.Shake(.1f, .15f);
 
             isInvincible = true;
@@ -89,9 +94,10 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void SplatterBlood()
+    public void SplatterBlood(float bloodScale)
     {
         GameObject blood = bloodList[Random.Range(0, bloodList.Length)];
+        blood.transform.localScale = new Vector2(bloodScale, bloodScale);
         GameObject bloodInstance = (GameObject)Instantiate(blood, new Vector3(transform.position.x, transform.position.y, 1), Quaternion.identity);
         GameManager.Instance.CheckBloodTiles();
     }
