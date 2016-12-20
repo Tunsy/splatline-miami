@@ -13,6 +13,7 @@ public class EnemyHealth : MonoBehaviour
     private float invincibilityTime;
     private float invincibilityTimer;
     public bool isInvincible;
+    private bool blink;
 
     // Components
     private Rigidbody2D rb;
@@ -32,7 +33,8 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        invincibilityTime = 0.25f;
+        invincibilityTime = 0.3f;
+        invincibilityTimer = invincibilityTime;
         isInvincible = false;
         rb = GetComponent<Rigidbody2D>();
         shake = FindObjectOfType<CameraShaking>();
@@ -44,13 +46,26 @@ public class EnemyHealth : MonoBehaviour
         // Check for invincibility
         if (isInvincible)
         {
+            // Update invincibility timer
             invincibilityTimer -= Time.deltaTime;
 
+            // Check for invincibility flig
             if (invincibilityTimer <= 0)
             {
                 isInvincible = false;
                 invincibilityTimer = invincibilityTime;
+                GetComponent<Renderer>().enabled = true;
+                GetComponent<SpriteRenderer>().color = Color.white;
             }
+            else
+            {
+                // Sprite blinks and turns red if invincible
+                blink = !blink;
+                GetComponent<Renderer>().enabled = blink;
+                GetComponent<SpriteRenderer>().color = Color.red;
+            }
+
+
         }
 
     }
@@ -60,6 +75,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(!isInvincible)
         {
+            isInvincible = true;
             currentHealth -= damage;
 
             // Play sound
@@ -80,7 +96,7 @@ public class EnemyHealth : MonoBehaviour
             }
             shake.Shake(.1f, .15f);
 
-            isInvincible = true;
+
         }
     }
 

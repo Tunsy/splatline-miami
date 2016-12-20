@@ -76,6 +76,9 @@ public class GameManager : MonoBehaviour
             {
                 timer = roundTime;
             }
+        }else
+        {
+            gameoverMenu.SetActive(true);
         }
     }
 
