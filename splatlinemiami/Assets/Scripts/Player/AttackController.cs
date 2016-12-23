@@ -36,20 +36,23 @@ public class AttackController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-
-        // Check if the player is holding down a click and shoot if the cooldown is over
-        if (Input.GetButton("Fire1") && timer > currentWeapon.fireCooldown)
+        if(!GameManager.Instance.isGameOver)
         {
-            Shoot();
-        }
+            timer += Time.deltaTime;
 
-        // Check for weapon switcher
-        for (int i = 0; i < keyCodes.Length; i++)
-        {
-            if (Input.GetKeyDown(keyCodes[i]) && weapons[i] != null)
+            // Check if the player is holding down a click and shoot if the cooldown is over
+            if (Input.GetButton("Fire1") && timer > currentWeapon.fireCooldown)
             {
-                currentWeapon = weapons[i];
+                Shoot();
+            }
+
+            // Check for weapon switcher
+            for (int i = 0; i < keyCodes.Length; i++)
+            {
+                if (Input.GetKeyDown(keyCodes[i]) && weapons[i] != null)
+                {
+                    currentWeapon = weapons[i];
+                }
             }
         }
     }

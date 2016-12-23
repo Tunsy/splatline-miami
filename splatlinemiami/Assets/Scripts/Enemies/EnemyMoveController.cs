@@ -26,7 +26,13 @@ public class EnemyMoveController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Move();
+        if (!GameManager.Instance.isGameOver)
+        {
+            Move();
+        }else
+        {
+            rb.velocity = new Vector2(0,0);
+        }
 	}
 
     public void Move()

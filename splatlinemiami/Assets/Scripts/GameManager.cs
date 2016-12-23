@@ -43,8 +43,12 @@ public class GameManager : MonoBehaviour
 
     //
     public int money;
+    public Transform player;
 
     public GameObject gameoverMenu;
+
+    public AudioSource sfxSource;
+
 
     public void Start()
     {
@@ -79,7 +83,28 @@ public class GameManager : MonoBehaviour
         }else
         {
             gameoverMenu.SetActive(true);
+            StartCoroutine("PanCamera");
+            //PanCameraEnd();
         }
+    }
+
+    public IEnumerator PanCamera()
+    {
+        yield return new WaitForSeconds(0.75f);
+        while(Camera.main.orthographicSize < 15.9f)
+        {
+            Camera.main.transform.position = new Vector3((Mathf.Lerp(player.position.x, 6.5f, Time.deltaTime)), Mathf.Lerp(player.position.y, -6.5f, Time.deltaTime * 0.01f), -10);
+            Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, 16, Time.deltaTime * 0.003f);
+            yield return null;
+        }
+    }
+
+    public void PlayClip(AudioClip clip, float volume, bool isLooping)
+    {
+        sfxSource.clip = clip;
+        sfxSource.volume = volume;
+        sfxSource.loop = isLooping;
+        sfxSource.Play();
     }
 
     public void ClearBlood()

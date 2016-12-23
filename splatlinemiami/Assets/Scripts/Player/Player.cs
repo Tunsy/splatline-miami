@@ -20,8 +20,15 @@ public class Player : MonoBehaviour {
 
     void Update()
     {
-        Move();
-        ControlMouse();
+        if (!GameManager.Instance.isGameOver)
+        {
+            Move();
+            ControlMouse();
+        }
+        else
+        {
+            rb.velocity = new Vector2(0,0);
+        }
     }
 
     void ControlMouse()

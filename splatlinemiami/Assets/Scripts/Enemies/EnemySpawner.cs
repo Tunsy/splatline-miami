@@ -17,15 +17,19 @@ public class EnemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        currentTimer -= Time.deltaTime;
-
-        if (currentTimer <= 0)
+        if (!GameManager.Instance.isGameOver)
         {
-            for (int i = 0; i <= (int)Random.Range(0, 3); i++)
-            { 
-                Instantiate(enemy, new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y + Random.Range(-2, 2), 0), Quaternion.identity);
-                currentTimer = Random.Range(minTime, maxTime);
+            currentTimer -= Time.deltaTime;
+
+            if (currentTimer <= 0)
+            {
+                for (int i = 0; i <= (int)Random.Range(0, 3); i++)
+                {
+                    Instantiate(enemy, new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y + Random.Range(-2, 2), 0), Quaternion.identity);
+                    currentTimer = Random.Range(minTime, maxTime);
+                }
             }
         }
+
 	}
 }
