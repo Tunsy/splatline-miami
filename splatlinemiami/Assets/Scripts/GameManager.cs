@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     public Transform player;
 
     public GameObject gameoverMenu;
+    public RectTransform bloodBar;
 
     public AudioSource sfxSource;
 
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
         CreateGrid(startingWidth, startingHeight, 2);
 
         InvokeRepeating("ClearBlood", 0, 1.0f);
+        CheckBloodTiles();
 
         isGameOver = false;
     }
@@ -167,8 +169,12 @@ public class GameManager : MonoBehaviour
         int totalSize = bloodyTiles.GetLength(0) * bloodyTiles.GetLength(1);
         float percentCurrentlyFilled = ((float)totalBloodCount / totalSize)*100;
 
+        // Update size of the blood bar
+        float barScaling = percentCurrentlyFilled / percentToExpand;
+        barScaling = barScaling > 1 ? 1 : barScaling;
+        bloodBar.transform.localScale = new Vector2(barScaling, bloodBar.transform.localScale.y);
+
         if (percentCurrentlyFilled > percentToExpand){
-            percentCurrentlyFilled = 0;
             ExpandRoom();
         }
     }

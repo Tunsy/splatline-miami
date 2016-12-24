@@ -51,6 +51,10 @@ public class Timer : MonoBehaviour
                     runningOut = true;
                     lastSecond = 15;
                 }
+                if(timeLeft > 16)
+                {
+                    runningOut = false;
+                }
 
                 // Tick after every second
                 if(runningOut && timeLeft <= 10)
