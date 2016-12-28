@@ -149,7 +149,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013000667550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.550658, y: -9.234642, z: 0}
+  m_LocalPosition: {x: 7.25, y: -8.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -229,6 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 114000012226278898, guid: 77d9686e64d88dd40952f90d3d670d0f, type: 2}
+  bulletShellParticles: {fileID: 1000013189227958, guid: 21069f9dc7553ee4c82647c6a7311617,
+    type: 2}
   fireCooldown: 0.1
   shootSound: {fileID: 8300000, guid: f86f4236bd1b8864e8186401a4c18bb5, type: 3}
   reloadSound: {fileID: 0}
@@ -302,6 +304,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 114000013464382394, guid: d7fb543f69d154f4fa1a00d9a3c85ff5, type: 2}
+  bulletShellParticles: {fileID: 1000013189227958, guid: 21069f9dc7553ee4c82647c6a7311617,
+    type: 2}
   fireCooldown: 2.3
   shootSound: {fileID: 8300000, guid: d60b976082967e742af66cb2796afad2, type: 3}
   reloadSound: {fileID: 0}
@@ -319,6 +323,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 114000012744282194, guid: 666aa4d2c3a3d89419416e0bf23f5f96, type: 2}
+  bulletShellParticles: {fileID: 1000013652188806, guid: 96c320d55f6d88e4f857893fcf60d6a1,
+    type: 2}
   fireCooldown: 1.4
   shootSound: {fileID: 8300000, guid: 9eace8a864b3116468269a1d110d73aa, type: 3}
   reloadSound: {fileID: 0}

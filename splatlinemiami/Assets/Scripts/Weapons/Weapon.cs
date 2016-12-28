@@ -5,6 +5,7 @@ public class Weapon : MonoBehaviour
 {
 
     public Bullet bullet;
+    public GameObject bulletShellParticles;
     public float fireCooldown;
     public AudioClip shootSound;
     public AudioClip reloadSound;
@@ -30,6 +31,7 @@ public class Weapon : MonoBehaviour
 
             // Convert the angle of the player to the velocity of the bullet and shoot it forward
             GameObject currentBullet = (GameObject)Instantiate(bullet.gameObject, transform.position, GetComponentInParent<Transform>().transform.rotation);
+            Instantiate(bulletShellParticles, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
             Vector2 angle = Quaternion.AngleAxis(transform.rotation.eulerAngles.z + Random.Range(-3f, 3f), Vector3.forward) * Vector3.up;
             currentBullet.GetComponent<Rigidbody2D>().velocity = angle * currentBullet.GetComponent<Bullet>().bulletSpeed;
 

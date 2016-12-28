@@ -53,6 +53,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 114000012226278898, guid: 77d9686e64d88dd40952f90d3d670d0f, type: 2}
+  bulletShellParticles: {fileID: 1000013189227958, guid: 21069f9dc7553ee4c82647c6a7311617,
+    type: 2}
   fireCooldown: 0.1
   shootSound: {fileID: 8300000, guid: f86f4236bd1b8864e8186401a4c18bb5, type: 3}
   reloadSound: {fileID: 0}

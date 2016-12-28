@@ -12,6 +12,8 @@ public class Shotgun : Weapon {
         if (shootSound)
             AudioSource.PlayClipAtPoint(shootSound, transform.position);
 
+        Instantiate(bulletShellParticles, transform.position, Quaternion.Euler(new Vector3(-90,0,0)));
+
         for (int i = 0; i < bulletsPerShot; i++)
         {
             // Convert the angle of the player to the velocity of the bullet and shoot it forward
