@@ -94,9 +94,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        gameoverMenu.SetActive(true);
         StartCoroutine("PanCamera");
-        UpdateHighScore();
     }
 
     void UpdateHighScore()
@@ -126,6 +124,9 @@ public class GameManager : MonoBehaviour
             Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, 16, Time.deltaTime * 0.003f);
             yield return null;
         }
+
+        gameoverMenu.SetActive(true);
+        UpdateHighScore();
     }
 
     public void PlayClip(AudioClip clip, float volume, bool isLooping)
