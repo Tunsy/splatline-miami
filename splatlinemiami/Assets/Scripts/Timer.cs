@@ -72,14 +72,20 @@ public class Timer : MonoBehaviour
 
     void OnGUI()
     {
+        // GUI Style
         GUIStyle myStyle = new GUIStyle();
         myStyle.font = deadFont;
         myStyle.normal.textColor = Color.red;
         myStyle.fontSize = 50;
         GUI.skin.label.fontSize = 20;
-        GUI.Label(new Rect(10, 10, 100, 100), "SCORE: " + GameManager.Instance.totalBloodCount * 10, myStyle);
-        GUI.skin.label.fontSize = 40;
-        GUI.Label(new Rect(Screen.width / 2, 10, 200, 100), "" + (int)timeLeft, myStyle);
+
+        // Display GUI if the game isnt over
+        if(!GameManager.Instance.isGameOver)
+        {
+            GUI.Label(new Rect(10, 10, 100, 100), "SCORE: " + GameManager.Instance.GetScore(), myStyle);
+            GUI.skin.label.fontSize = 40;
+            GUI.Label(new Rect(Screen.width / 2, 10, 200, 100), "" + (int)timeLeft, myStyle);
+        }
     }
 
     void Tick()

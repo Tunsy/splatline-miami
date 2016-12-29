@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,7 +46,10 @@ public class GameManager : MonoBehaviour
     public int money;
     public Transform player;
 
+    // UI
     public GameObject gameoverMenu;
+    public Text score;
+    public Text hiScore;
     public RectTransform bloodBar;
 
     public AudioSource sfxSource;
@@ -84,10 +88,33 @@ public class GameManager : MonoBehaviour
             }
         }else
         {
-            gameoverMenu.SetActive(true);
-            StartCoroutine("PanCamera");
-            //PanCameraEnd();
+            GameOver();
         }
+    }
+
+    public void GameOver()
+    {
+        gameoverMenu.SetActive(true);
+        StartCoroutine("PanCamera");
+        UpdateHighScore();
+    }
+
+    void UpdateHighScore()
+    {
+        // Compare high scores
+        int oldHighscore = PlayerPrefs.GetInt("highscore", 0);
+        if (GetScore() > oldHighscore)
+            PlayerPrefs.SetInt("highscore", GetScore());
+
+        // Display score
+        score.text = GetScore().ToString();
+        hiScore.text = PlayerPrefs.GetInt("highscore", 0).ToString();
+
+    }
+    
+    public int GetScore()
+    {
+        return totalBloodCount * 10;
     }
 
     public IEnumerator PanCamera()
