@@ -306,7 +306,7 @@ MonoBehaviour:
   bullet: {fileID: 114000013464382394, guid: d7fb543f69d154f4fa1a00d9a3c85ff5, type: 2}
   bulletShellParticles: {fileID: 1000013189227958, guid: 21069f9dc7553ee4c82647c6a7311617,
     type: 2}
-  fireCooldown: 2.3
+  fireCooldown: 2.1
   shootSound: {fileID: 8300000, guid: d60b976082967e742af66cb2796afad2, type: 3}
   reloadSound: {fileID: 0}
   maxBulletCount: 1000

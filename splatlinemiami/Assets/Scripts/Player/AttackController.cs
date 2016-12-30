@@ -19,16 +19,10 @@ public class AttackController : MonoBehaviour {
 
     private float timer;
 
-    int shootableMask;
-    ParticleSystem gunParticles;
-    LineRenderer gunLine;
-    AudioSource gunAudio;
-    Light gunLight;
-    float effectsDisplayTime = 0.2f;
+
 
 	// Use this for initialization
 	void Start () {
-        shootableMask = LayerMask.GetMask("Shootable");
         currentWeapon = weapons[0];
         timer = 0;
 	}
@@ -52,6 +46,7 @@ public class AttackController : MonoBehaviour {
                 if (Input.GetKeyDown(keyCodes[i]) && weapons[i] != null)
                 {
                     currentWeapon = weapons[i];
+                    GameManager.Instance.SetActiveWeapon(i);
                 }
             }
         }

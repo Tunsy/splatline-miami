@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public float yTileOffset;
     public int startingWidth;
     public int startingHeight;
-    public AudioClip levelUpSound;
+
 
     // Rooms
     public GameObject[] maps;
@@ -48,11 +48,19 @@ public class GameManager : MonoBehaviour
 
     // UI
     public GameObject gameoverMenu;
+    public GameObject HUDMenu;
+    public RectTransform bloodBar;
+    public Sprite weaponSelected;
+    public Sprite weaponNotSelected;
+    public Image[] weaponBoxes;
     public Text score;
     public Text hiScore;
-    public RectTransform bloodBar;
+    private bool finishedPanning;
 
+    // Audio 
     public AudioSource sfxSource;
+    public AudioClip levelUpSound;
+    public AudioClip beep;
 
 
     public void Start()
@@ -73,6 +81,7 @@ public class GameManager : MonoBehaviour
         CheckBloodTiles();
 
         isGameOver = false;
+        finishedPanning = false;
     }
 
     public void Update()
@@ -94,7 +103,14 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        HUDMenu.SetActive(false);
         StartCoroutine("PanCamera");
+
+        if(finishedPanning)
+        {
+            gameoverMenu.SetActive(true);
+            UpdateHighScore();
+        }
     }
 
     void UpdateHighScore()
@@ -110,11 +126,6 @@ public class GameManager : MonoBehaviour
 
     }
     
-    public int GetScore()
-    {
-        return totalBloodCount * 10;
-    }
-
     public IEnumerator PanCamera()
     {
         yield return new WaitForSeconds(0.75f);
@@ -124,9 +135,23 @@ public class GameManager : MonoBehaviour
             Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, 16, Time.deltaTime * 0.003f);
             yield return null;
         }
+        finishedPanning = true;
+    }
 
-        gameoverMenu.SetActive(true);
-        UpdateHighScore();
+    public void SetActiveWeapon(int weaponIndex)
+    {
+        for(int i = 0; i < weaponBoxes.Length; i++)
+        {
+            if (i == weaponIndex)
+                weaponBoxes[i].sprite = weaponSelected;
+            else
+                weaponBoxes[i].sprite = weaponNotSelected;
+        }
+    }
+
+    public int GetScore()
+    {
+        return totalBloodCount * 10;
     }
 
     public void PlayClip(AudioClip clip, float volume, bool isLooping)
