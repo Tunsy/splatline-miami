@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour
 
     // Game state
     public StateType currentState;
-    public float timer;
-    public float roundTime;
     public bool isGameOver;
+    public bool enemiesDisabled;
+    public bool musicDisabled;
 
     // Grid
     public BloodTile bloodTile;
@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-        timer =  roundTime;
         currentState = StateType.PLAYING;
         yTileOffset *= -1;
         currentLevel = 0;
@@ -86,19 +85,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        if (!isGameOver)
-        {
-            timer -= Time.deltaTime;
 
-            // Go to the shop after the timer ends
-            if (timer <= 0)
-            {
-                timer = roundTime;
-            }
-        }else
-        {
-            GameOver();
-        }
     }
 
     public void GameOver()

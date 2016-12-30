@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!GameManager.Instance.isGameOver)
+        if (!GameManager.Instance.isGameOver && !GameManager.Instance.enemiesDisabled)
         {
             currentTimer -= Time.deltaTime;
 

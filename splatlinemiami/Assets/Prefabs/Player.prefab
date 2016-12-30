@@ -57,6 +57,7 @@ GameObject:
   - 58: {fileID: 58000012428905596}
   - 114: {fileID: 114000012052066774}
   - 114: {fileID: 114000010219779014}
+  - 114: {fileID: 114000011699036206}
   m_Layer: 8
   m_Name: PlayerAttack
   m_TagString: Untagged
@@ -95,7 +96,7 @@ GameObject:
   - 50: {fileID: 50000014249983000}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,6 +264,20 @@ MonoBehaviour:
   rotateSpeed: 100
   currentRotation: 0
   isMoving: 0
+--- !u!114 &114000011699036206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012639270920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b3562523c1ee4d8c0abf94fbba78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  ac: {fileID: 0}
+  currentBuffs: []
 --- !u!114 &114000011797331894
 MonoBehaviour:
   m_ObjectHideFlags: 1

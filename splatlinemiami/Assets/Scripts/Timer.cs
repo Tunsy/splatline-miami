@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
     private int score;
     public Font deadFont;
     public bool infiniteTime;
+    public bool musicDisabled;
 
     private bool runningOut;
     public AudioClip gameMusic;
@@ -18,7 +19,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         if (infiniteTime) timeLeft = 0;
-        GameManager.Instance.PlayClip(gameMusic, .3f, true);
+        if (!musicDisabled) GameManager.Instance.PlayClip(gameMusic, .3f, true);
         runningOut = false;
     }
     public void GameOver()

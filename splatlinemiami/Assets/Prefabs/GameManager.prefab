@@ -55,6 +55,7 @@ MonoBehaviour:
   timeLeft: 60
   deadFont: {fileID: 12800000, guid: ffc5388145371744483ce36ed103bafd, type: 3}
   infiniteTime: 0
+  musicDisabled: 0
   gameMusic: {fileID: 8300000, guid: d5e654596d78a4b4cb79232e3734a99d, type: 3}
   outOfTimeMusic: {fileID: 8300000, guid: df4feeb333f3df64abf8bb8ccfc9490c, type: 3}
   tick: {fileID: 8300000, guid: 7d4255a24f3f88d41a7c900aebba008d, type: 3}
@@ -70,9 +71,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  timer: 0
-  roundTime: 60
   isGameOver: 0
+  enemiesDisabled: 0
+  musicDisabled: 0
   bloodTile: {fileID: 0}
   tileGrid: {fileID: 0}
   bloodSplatters: []
@@ -82,7 +83,6 @@ MonoBehaviour:
   yTileOffset: 4
   startingWidth: 6
   startingHeight: 6
-  levelUpSound: {fileID: 8300000, guid: a5010d69129a7324e82596ceef52f25d, type: 3}
   maps:
   - {fileID: 1000010748482266, guid: e38ad2ec856b0cf42820c7e0c0633ed3, type: 2}
   - {fileID: 1000012512987050, guid: 435bfb922b58f3b4e9a4ec268da21a1a, type: 2}
@@ -92,7 +92,16 @@ MonoBehaviour:
   money: 0
   player: {fileID: 0}
   gameoverMenu: {fileID: 0}
+  HUDMenu: {fileID: 0}
+  bloodBar: {fileID: 0}
+  weaponSelected: {fileID: 21300000, guid: 10b2f5ed61da0694294f7439820021d1, type: 3}
+  weaponNotSelected: {fileID: 21300000, guid: 0ee8c0a62e6d7974f85785ad4d2c3afc, type: 3}
+  weaponBoxes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   score: {fileID: 0}
   hiScore: {fileID: 0}
-  bloodBar: {fileID: 0}
   sfxSource: {fileID: 0}
+  levelUpSound: {fileID: 8300000, guid: a5010d69129a7324e82596ceef52f25d, type: 3}
+  beep: {fileID: 8300000, guid: d7272e7a413a7de419935db2b3cd967b, type: 3}
