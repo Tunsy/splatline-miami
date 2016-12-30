@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemySpawner : MonoBehaviour {
 
-    public GameObject enemy;
+    public GameObject[] enemyList;
     public float currentTimer;
     public float maxTime;
     public float minTime;
@@ -25,6 +25,7 @@ public class EnemySpawner : MonoBehaviour {
             {
                 for (int i = 0; i <= (int)Random.Range(0, 3); i++)
                 {
+                    GameObject enemy = enemyList[(int)Random.Range(0, enemyList.Length)];
                     Instantiate(enemy, new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y + Random.Range(-2, 2), 0), Quaternion.identity);
                     currentTimer = Random.Range(minTime, maxTime);
                 }

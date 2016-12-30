@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012026728832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.16, y: -6.2, z: 0}
+  m_LocalPosition: {x: 94.902565, y: -47.300247, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -66,7 +66,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee47b001a38a5942ae161951b2ce14d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1000013210494512, guid: 15444fd0fdc0b544c958f571e4a0ef43, type: 2}
+  enemyList:
+  - {fileID: 1000013210494512, guid: 15444fd0fdc0b544c958f571e4a0ef43, type: 2}
+  - {fileID: 1000013210494512, guid: b01151236dc62924685a171283ec73b9, type: 2}
+  - {fileID: 1000013210494512, guid: d3a3d5ca94f0d8745970c9875f9bf5ed, type: 2}
+  - {fileID: 1000013210494512, guid: 48b3401f5e1d16a468a5e977e50a32a5, type: 2}
   currentTimer: 1.6766433
   maxTime: 7
   minTime: 3

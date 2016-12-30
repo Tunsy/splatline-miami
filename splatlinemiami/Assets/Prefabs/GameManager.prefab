@@ -92,4 +92,7 @@ MonoBehaviour:
   money: 0
   player: {fileID: 0}
   gameoverMenu: {fileID: 0}
+  score: {fileID: 0}
+  hiScore: {fileID: 0}
+  bloodBar: {fileID: 0}
   sfxSource: {fileID: 0}
