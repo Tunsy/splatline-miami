@@ -66,31 +66,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AttackPickup.cs" />
     <Compile Include="Assets\Scripts\Background.cs" />
     <Compile Include="Assets\Scripts\BloodSplatter.cs" />
     <Compile Include="Assets\Scripts\BloodTile.cs" />
-    <Compile Include="Assets\Scripts\BuffManager.cs" />
-    <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyAnimationController.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyMoveController.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpawner.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\BuffManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\Timer.cs" />
+    <Compile Include="Assets\Scripts\Managers\Wallet.cs" />
     <Compile Include="Assets\Scripts\ParticleSystemAutoDestroy.cs" />
-    <Compile Include="Assets\Scripts\Pickup.cs" />
+    <Compile Include="Assets\Scripts\Pickups\AttackPickup.cs" />
+    <Compile Include="Assets\Scripts\Pickups\Pickup.cs" />
+    <Compile Include="Assets\Scripts\Pickups\SpeedPickup.cs" />
+    <Compile Include="Assets\Scripts\Pickups\TimePickup.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationController.cs" />
     <Compile Include="Assets\Scripts\Player\AttackController.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\SpeedPickup.cs" />
-    <Compile Include="Assets\Scripts\TimePickup.cs" />
-    <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\UI\CameraShaking.cs" />
     <Compile Include="Assets\Scripts\UI\GameOver.cs" />
     <Compile Include="Assets\Scripts\UI\QuitGame.cs" />
     <Compile Include="Assets\Scripts\UI\StartGame.cs" />
-    <Compile Include="Assets\Scripts\Wallet.cs" />
     <Compile Include="Assets\Scripts\Weapons\Bullet.cs" />
     <Compile Include="Assets\Scripts\Weapons\Explosion.cs" />
     <Compile Include="Assets\Scripts\Weapons\Explosive.cs" />

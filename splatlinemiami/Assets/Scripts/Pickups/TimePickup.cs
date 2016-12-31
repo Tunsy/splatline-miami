@@ -3,7 +3,8 @@ using System.Collections;
 
 public class TimePickup : MonoBehaviour {
 
-    public float timeExtended;
+    public int timeExtended;
+    public AudioClip powerupSound;
     private Timer timer;
 
 	// Use this for initialization
@@ -15,7 +16,9 @@ public class TimePickup : MonoBehaviour {
     {
         if (other.GetComponent<Player>())
         {
+            AudioSource.PlayClipAtPoint(powerupSound, Camera.main.transform.position);
             timer.ExtendTime(timeExtended);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

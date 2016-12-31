@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class EnemyHealth : MonoBehaviour
     public GameObject bloodBurst;
     private EnemyMoveController movecontroller;
 
+    // Item drops
+    public int dropChance;
+    public GameObject itemDrop;
+
     // Sounds
     public AudioClip[] deathSounds;
     public AudioClip[] hurtSounds;
@@ -39,6 +44,7 @@ public class EnemyHealth : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         shake = FindObjectOfType<CameraShaking>();
         movecontroller = GetComponent<EnemyMoveController>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -54,15 +60,15 @@ public class EnemyHealth : MonoBehaviour
             {
                 isInvincible = false;
                 invincibilityTimer = invincibilityTime;
-                GetComponent<Renderer>().enabled = true;
-                GetComponent<SpriteRenderer>().color = Color.white;
+                sr.enabled = true;
+                sr.color = Color.white;
             }
             else
             {
                 // Sprite blinks and turns red if invincible
                 blink = !blink;
-                GetComponent<Renderer>().enabled = blink;
-                GetComponent<SpriteRenderer>().color = Color.red;
+                sr.enabled = blink;
+                sr.color = Color.red;
             }
 
 
@@ -73,7 +79,7 @@ public class EnemyHealth : MonoBehaviour
     // TODO: Take in account of invincibility
     public void TakeDamage(int damage, float bloodScale)
     {
-        if(!isInvincible)
+        if (!isInvincible)
         {
             isInvincible = true;
             currentHealth -= damage;
@@ -102,10 +108,11 @@ public class EnemyHealth : MonoBehaviour
 
     public void Death()
     {
-        if(deathSounds != null)
+        if (deathSounds != null)
         {
             AudioSource.PlayClipAtPoint(deathSounds[Random.Range(0, deathSounds.Length)], Camera.main.transform.position, .8f);
         }
+        DropItem();
         Instantiate(bloodBurst, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
@@ -121,5 +128,16 @@ public class EnemyHealth : MonoBehaviour
     public void CalculateKnockback(Vector2 knockbackDirection, float knockbackStrength)
     {
         movecontroller.Knockback(knockbackDirection, knockbackStrength);
+    }
+
+    void DropItem()
+    {
+        if(itemDrop != null)
+        {
+            if (Random.Range(0, 100) < dropChance)
+            {
+                Instantiate(itemDrop, transform.position, Quaternion.identity);
+            }
+        }
     }
 }
