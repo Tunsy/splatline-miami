@@ -42,6 +42,9 @@ public abstract class Pickup : MonoBehaviour {
         {
             AudioSource.PlayClipAtPoint(powerupSound, Camera.main.transform.position);
         }
+
+
+        currentTime = buffTime;
     }
 
     public void UpdateTimer()

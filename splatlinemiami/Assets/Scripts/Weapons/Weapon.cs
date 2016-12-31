@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
         isReloading = false;
     }
 
-    public virtual void Shoot()
+    public virtual void Shoot(float damageMultiplier)
     {
         if (!isReloading)
         {
@@ -34,6 +34,7 @@ public class Weapon : MonoBehaviour
             Instantiate(bulletShellParticles, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
             Vector2 angle = Quaternion.AngleAxis(transform.rotation.eulerAngles.z + Random.Range(-3f, 3f), Vector3.forward) * Vector3.up;
             currentBullet.GetComponent<Rigidbody2D>().velocity = angle * currentBullet.GetComponent<Bullet>().bulletSpeed;
+            currentBullet.GetComponent<Bullet>().damage *= (int)damageMultiplier;
 
             // Reload if ammo count is 0
             currentBulletCount--;

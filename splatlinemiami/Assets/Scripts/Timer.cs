@@ -93,4 +93,9 @@ public class Timer : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(tick, Camera.main.transform.position);
     }
+
+    public void ExtendTime(int length)
+    {
+        timeLeft += length;
+    }
 }

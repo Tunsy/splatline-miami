@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class SpeedPickup : Pickup {
+public class AttackPickup : Pickup {
 
-    public float speedMagnitude;
+    public float attackMagnitude;
 
     public override void ApplyBuff()
     {
         base.ApplyBuff();
 
         // Check for existing buff
-        for(int i = 0; i < bm.currentBuffs.Count; i++)
+        for (int i = 0; i < bm.currentBuffs.Count; i++)
         {
-            if (bm.currentBuffs[i].GetComponent<SpeedPickup>())
+            if (bm.currentBuffs[i].GetComponent<AttackPickup>())
             {
                 bm.currentBuffs[i].resetTimer();
                 Destroy(transform.parent.gameObject);
@@ -22,13 +23,15 @@ public class SpeedPickup : Pickup {
 
         // Apply buff
         bm.currentBuffs.Add(this);
-        bm.player.speed *= speedMagnitude;
+        bm.ac.damageMultiplier *= attackMagnitude;
+
     }
 
     public override void RemoveBuff()
     {
-        bm.player.speed /=  speedMagnitude;
+        bm.ac.damageMultiplier /= attackMagnitude;
         bm.currentBuffs.Remove(this);
         Destroy(gameObject.transform.parent.gameObject);
     }
+
 }

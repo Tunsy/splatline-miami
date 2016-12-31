@@ -85,7 +85,10 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-
+        if (isGameOver)
+        {
+            GameOver();
+        }
     }
 
     public void GameOver()

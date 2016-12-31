@@ -5,6 +5,7 @@ public class AttackController : MonoBehaviour {
 
     public Weapon currentWeapon;
     public Weapon[] weapons;
+    public float damageMultiplier;
     private KeyCode[] keyCodes = {
          KeyCode.Alpha1,
          KeyCode.Alpha2,
@@ -25,6 +26,7 @@ public class AttackController : MonoBehaviour {
 	void Start () {
         currentWeapon = weapons[0];
         timer = 0;
+        damageMultiplier = 1;
 	}
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class AttackController : MonoBehaviour {
             // Check if the player is holding down a click and shoot if the cooldown is over
             if (Input.GetButton("Fire1") && timer > currentWeapon.fireCooldown)
             {
-                Shoot();
+                Shoot(damageMultiplier);
             }
 
             // Check for weapon switcher
@@ -52,9 +54,9 @@ public class AttackController : MonoBehaviour {
         }
     }
 
-    void Shoot()
+    void Shoot(float damageMultiplier)
     {
         timer = 0;
-        currentWeapon.Shoot();
+        currentWeapon.Shoot(damageMultiplier);
     }
 }

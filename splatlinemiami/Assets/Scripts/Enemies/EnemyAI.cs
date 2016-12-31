@@ -22,7 +22,7 @@ public class EnemyAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (GameManager.Instance.isGameOver == false)
+        if (GameManager.Instance.isGameOver == false && !GameManager.Instance.enemiesDisabled)
         {
             targetCoords = targetPosition.transform.position;
             targetDirection = targetCoords - transform.position;
