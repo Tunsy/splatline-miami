@@ -24,6 +24,7 @@ public class AttackPickup : Pickup {
         // Apply buff
         bm.currentBuffs.Add(this);
         bm.ac.damageMultiplier *= attackMagnitude;
+        GameManager.Instance.DisplayText("Attack Powerup!");
 
     }
 

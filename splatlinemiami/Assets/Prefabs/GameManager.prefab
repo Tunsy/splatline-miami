@@ -102,6 +102,9 @@ MonoBehaviour:
   - {fileID: 0}
   score: {fileID: 0}
   hiScore: {fileID: 0}
+  displayText: {fileID: 114000013289281068, guid: d5bb7bc4c8ea7d74eb06b18afc5624ce,
+    type: 2}
+  canvas: {fileID: 0}
   sfxSource: {fileID: 0}
   levelUpSound: {fileID: 8300000, guid: a5010d69129a7324e82596ceef52f25d, type: 3}
   beep: {fileID: 8300000, guid: d7272e7a413a7de419935db2b3cd967b, type: 3}

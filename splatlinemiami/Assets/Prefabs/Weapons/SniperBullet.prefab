@@ -90,6 +90,8 @@ MonoBehaviour:
   knockbackStrength: 0.5
   bloodScale: 0.7
   angle: {x: 0, y: 0}
+  bulletParticle: {fileID: 1000010034353096, guid: 90dc2861ae1c5a243970d0a2aede3316,
+    type: 2}
   penetrationAmount: 7
 --- !u!212 &212000011246951774
 SpriteRenderer:

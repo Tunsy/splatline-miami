@@ -18,6 +18,7 @@ public class TimePickup : MonoBehaviour {
         {
             AudioSource.PlayClipAtPoint(powerupSound, Camera.main.transform.position);
             timer.ExtendTime(timeExtended);
+            GameManager.Instance.DisplayText("+5 Seconds!");
             Destroy(transform.parent.gameObject);
         }
     }

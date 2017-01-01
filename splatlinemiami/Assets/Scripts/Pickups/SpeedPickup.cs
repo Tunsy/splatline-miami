@@ -23,6 +23,7 @@ public class SpeedPickup : Pickup {
         // Apply buff
         bm.currentBuffs.Add(this);
         bm.player.speed *= speedMagnitude;
+        GameManager.Instance.DisplayText("Speed powerup!");
     }
 
     public override void RemoveBuff()

@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour {
     private float despawnTime;
     protected Rigidbody2D rb;
 
+
 	// Use this for initialization
 	void Start ()
     {
@@ -45,7 +46,6 @@ public class Bullet : MonoBehaviour {
             EnemyHealth health = other.gameObject.GetComponent<EnemyHealth>();
             health.TakeDamage(damage, bloodScale);
             health.CalculateKnockback(GetComponent<Rigidbody2D>().velocity, knockbackStrength);
-
             Destroy(gameObject);
         }
     }

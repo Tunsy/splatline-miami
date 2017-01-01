@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
     public Text score;
     public Text hiScore;
     private bool finishedPanning;
+    public Text displayText;
+    public Canvas canvas;
 
     // Audio 
     public AudioSource sfxSource;
@@ -96,7 +98,7 @@ public class GameManager : MonoBehaviour
         HUDMenu.SetActive(false);
         StartCoroutine("PanCamera");
 
-        if(finishedPanning)
+        if (finishedPanning)
         {
             gameoverMenu.SetActive(true);
             UpdateHighScore();
@@ -115,11 +117,11 @@ public class GameManager : MonoBehaviour
         hiScore.text = PlayerPrefs.GetInt("highscore", 0).ToString();
 
     }
-    
+
     public IEnumerator PanCamera()
     {
         yield return new WaitForSeconds(0.75f);
-        while(Camera.main.orthographicSize < 15.9f)
+        while (Camera.main.orthographicSize < 15.9f)
         {
             Camera.main.transform.position = new Vector3((Mathf.Lerp(player.position.x, 6.5f, Time.deltaTime)), Mathf.Lerp(player.position.y, -6.5f, Time.deltaTime * 0.01f), -10);
             Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, 16, Time.deltaTime * 0.003f);
@@ -130,7 +132,7 @@ public class GameManager : MonoBehaviour
 
     public void SetActiveWeapon(int weaponIndex)
     {
-        for(int i = 0; i < weaponBoxes.Length; i++)
+        for (int i = 0; i < weaponBoxes.Length; i++)
         {
             if (i == weaponIndex)
                 weaponBoxes[i].sprite = weaponSelected;
@@ -155,7 +157,7 @@ public class GameManager : MonoBehaviour
     public void ClearBlood()
     {
         BloodSplatter[] splatters = FindObjectsOfType<BloodSplatter>();
-        foreach(BloodSplatter currentSplatter in splatters)
+        foreach (BloodSplatter currentSplatter in splatters)
         {
             if (!currentSplatter.hasTile)
             {
@@ -210,14 +212,14 @@ public class GameManager : MonoBehaviour
     public void CheckBloodTiles()
     {
         int totalSize = bloodyTiles.GetLength(0) * bloodyTiles.GetLength(1);
-        float percentCurrentlyFilled = ((float)totalBloodCount / totalSize)*100;
+        float percentCurrentlyFilled = ((float)totalBloodCount / totalSize) * 100;
 
         // Update size of the blood bar
         float barScaling = percentCurrentlyFilled / percentToExpand;
         barScaling = barScaling > 1 ? 1 : barScaling;
         bloodBar.transform.localScale = new Vector2(barScaling, bloodBar.transform.localScale.y);
 
-        if (percentCurrentlyFilled > percentToExpand){
+        if (percentCurrentlyFilled > percentToExpand) {
             ExpandRoom();
         }
     }
@@ -227,8 +229,9 @@ public class GameManager : MonoBehaviour
         if (currentLevel < maxLevel)
         {
             currentLevel++;
-            if(levelUpSound)
+            if (levelUpSound)
                 AudioSource.PlayClipAtPoint(levelUpSound, Camera.main.transform.position, 1f);
+            GameManager.Instance.DisplayText("Level up!", Color.cyan);
 
             // Destroy old grid and create new grid 
             for (int i = 0; i < tileGrid.transform.childCount; i++)
@@ -255,5 +258,24 @@ public class GameManager : MonoBehaviour
         money -= sub;
         if (money < 0)
             money = 0;
+    }
+
+    public void DisplayText(string text)
+    {
+        Text tempTextBox = Instantiate(displayText, new Vector3(1,-13,0), transform.rotation) as Text;
+        tempTextBox.transform.SetParent(canvas.transform, false);
+        tempTextBox.text = text;
+        tempTextBox.CrossFadeAlpha(0f, 2.5f, true);
+        Destroy(tempTextBox, 2.5f);
+    }
+
+    public void DisplayText(string text, Color color)
+    {
+        Text tempTextBox = Instantiate(displayText, new Vector3(1, -13, 0), transform.rotation) as Text;
+        tempTextBox.transform.SetParent(canvas.transform, false);
+        tempTextBox.text = text;
+        tempTextBox.color = color;
+        tempTextBox.CrossFadeAlpha(0f, 2.5f, true);
+        Destroy(tempTextBox, 2.5f);
     }
 }
