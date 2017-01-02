@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public abstract class Pickup : MonoBehaviour {
 
@@ -10,7 +11,10 @@ public abstract class Pickup : MonoBehaviour {
     protected BoxCollider2D col;
     protected SpriteRenderer sr;
     public SpriteRenderer shadow;
+    public Image buffIcon;
+    public Image iconInstance;
     public AudioClip powerupSound;
+    protected Canvas canvas;
 
     public abstract void RemoveBuff();
 
@@ -19,6 +23,7 @@ public abstract class Pickup : MonoBehaviour {
         bm = FindObjectOfType<BuffManager>();
         col = GetComponent <BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
+        canvas = FindObjectOfType<Canvas>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -44,12 +49,15 @@ public abstract class Pickup : MonoBehaviour {
         }
 
 
+
+
         currentTime = buffTime;
     }
 
     public void UpdateTimer()
     {
         currentTime -= Time.deltaTime;
+
 
         if (currentTime <= 0 && currentlyApplied)
         {

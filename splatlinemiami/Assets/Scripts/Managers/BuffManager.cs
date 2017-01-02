@@ -20,6 +20,7 @@ public class BuffManager : MonoBehaviour {
 	    for(int i = 0; i < currentBuffs.Count; i++)
         {
             currentBuffs[i].UpdateTimer();
+            GameManager.Instance.UpdateBuffsUI(currentBuffs[i]);
         }
-	}
+    }
 }

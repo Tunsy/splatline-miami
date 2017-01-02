@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SpeedPickup : Pickup {
 
@@ -24,6 +25,8 @@ public class SpeedPickup : Pickup {
         bm.currentBuffs.Add(this);
         bm.player.speed *= speedMagnitude;
         GameManager.Instance.DisplayText("Speed powerup!");
+        iconInstance = Instantiate(buffIcon, new Vector2(-267 + (30 * bm.currentBuffs.Count), -12), Quaternion.identity) as Image;
+        iconInstance.transform.SetParent(canvas.transform.FindChild("HUD").transform, false);
     }
 
     public override void RemoveBuff()

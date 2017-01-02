@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
     public int startingWidth;
     public int startingHeight;
 
-
     // Rooms
     public GameObject[] maps;
     public GameObject currentMap;
@@ -277,5 +276,16 @@ public class GameManager : MonoBehaviour
         tempTextBox.color = color;
         tempTextBox.CrossFadeAlpha(0f, 2.5f, true);
         Destroy(tempTextBox, 2.5f);
+    }
+
+    public void UpdateBuffsUI(Pickup buff)
+    {
+        float currentPercentage = (buff.currentTime / buff.buffTime);
+        if(currentPercentage >= 1)
+        {
+            Destroy(buff.buffIcon);
+        }
+
+        buff.iconInstance.fillAmount = currentPercentage;
     }
 }

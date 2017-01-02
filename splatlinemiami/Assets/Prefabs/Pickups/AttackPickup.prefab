@@ -148,6 +148,8 @@ MonoBehaviour:
   currentTime: 0
   currentlyApplied: 0
   shadow: {fileID: 212000012721840828}
+  buffIcon: {fileID: 114000011872825052, guid: 4a3d586db738eff479422fc4c43061b2, type: 2}
+  iconInstance: {fileID: 0}
   powerupSound: {fileID: 8300000, guid: 182ac7afab3ca5d42a1cef88bc87d466, type: 3}
   attackMagnitude: 2
 --- !u!212 &212000012441126586

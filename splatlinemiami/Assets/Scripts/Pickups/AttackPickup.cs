@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public class AttackPickup : Pickup {
 
@@ -25,6 +26,8 @@ public class AttackPickup : Pickup {
         bm.currentBuffs.Add(this);
         bm.ac.damageMultiplier *= attackMagnitude;
         GameManager.Instance.DisplayText("Attack Powerup!");
+        iconInstance = Instantiate(buffIcon, new Vector2(-267 + (30 * bm.currentBuffs.Count), -12), Quaternion.identity) as Image;
+        iconInstance.transform.SetParent(canvas.transform.FindChild("HUD").transform, false);
 
     }
 
