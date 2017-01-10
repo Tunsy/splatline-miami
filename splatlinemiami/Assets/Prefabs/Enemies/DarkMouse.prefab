@@ -115,7 +115,8 @@ MonoBehaviour:
   - {fileID: 1000012588686132, guid: a777d0e3d988fd74b9a60486dc782e07, type: 2}
   - {fileID: 1000011762187556, guid: d5b5d85840bed954f91af8ac6d006a05, type: 2}
   isInvincible: 0
-  deadSprite: {fileID: 0}
+  deadBody: {fileID: 1000010216382544, guid: 34e5e9b4184db4243b4dc4abbca8ec8f, type: 2}
+  deadSprite: {fileID: 21300000, guid: be298e711947f2445b264e5fb8b9a1a3, type: 3}
   bloodBurst: {fileID: 1000012604644404, guid: 4323e19109411ea4895df7daaf428f04, type: 2}
   dropChance: 10
   itemDrop: {fileID: 1000013090081908, guid: ca5e2105b2d97ec4e949a7e834507be8, type: 2}

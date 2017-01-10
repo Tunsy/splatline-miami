@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         Instantiate(maps[currentLevel], new Vector3(0, 0, 0), Quaternion.identity);
         CreateGrid(startingWidth, startingHeight, 2);
 
-        InvokeRepeating("ClearBlood", 0, 1.0f);
+        //InvokeRepeating("ClearBlood", 0, 1.0f);
         CheckBloodTiles();
 
         isGameOver = false;
@@ -232,6 +232,8 @@ public class GameManager : MonoBehaviour
                 AudioSource.PlayClipAtPoint(levelUpSound, Camera.main.transform.position, 1f);
             GameManager.Instance.DisplayText("Level up!", Color.cyan);
 
+            CleanMap();
+
             // Destroy old grid and create new grid 
             for (int i = 0; i < tileGrid.transform.childCount; i++)
             {
@@ -245,6 +247,16 @@ public class GameManager : MonoBehaviour
             Destroy(FindObjectOfType<Tiled2Unity.TiledMap>().gameObject);
             Instantiate(maps[currentLevel], new Vector3(0, 0, 0), Quaternion.identity);
         }
+    }
+
+    public void CleanMap()
+    {
+        BloodSplatter[] bloodSplatters = FindObjectsOfType<BloodSplatter>();
+        foreach (BloodSplatter blood in bloodSplatters)
+        {
+            Destroy(blood.transform.gameObject);
+        }
+        List<Pickup> currentBuffs = new List<Pickup>();
     }
 
     public void AddMoney(int add)

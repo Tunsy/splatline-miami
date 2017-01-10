@@ -18,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
 
     // Components
     private Rigidbody2D rb;
+    public GameObject deadBody;
     public Sprite deadSprite;
     private SpriteRenderer sr;
     private CameraShaking shake;
@@ -108,12 +109,22 @@ public class EnemyHealth : MonoBehaviour
 
     public void Death()
     {
+        // Juice!
         if (deathSounds != null)
         {
-            AudioSource.PlayClipAtPoint(deathSounds[Random.Range(0, deathSounds.Length)], Camera.main.transform.position, .8f);
+            AudioSource.PlayClipAtPoint(deathSounds[Random.Range(0, deathSounds.Length - 1)], Camera.main.transform.position, .8f);
         }
-        DropItem();
         Instantiate(bloodBurst, transform.position, Quaternion.identity);
+        DropItem();
+
+        // Instantiate dead body
+        GameObject deadBodyInstance = Instantiate(deadBody, transform.position, Quaternion.identity) as GameObject;
+        deadBodyInstance.GetComponent<SpriteRenderer>().sprite = deadSprite;
+        if (Random.Range(0, 1) == 1)
+        {
+            deadBodyInstance.transform.localScale = new Vector3(-1, 1, 1);
+        }
+
         Destroy(gameObject);
     }
 
