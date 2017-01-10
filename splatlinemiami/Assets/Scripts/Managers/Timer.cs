@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour
     public void GameOver()
     {
         //Time.timeScale = 0;
-        score = GameManager.Instance.totalBloodCount;
+        score = GameManager.Instance.currentBloodCount;
         GameManager.Instance.isGameOver = true;
 
     }

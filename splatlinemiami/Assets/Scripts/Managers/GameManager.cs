@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public Transform tileGrid;
     private BloodTile[,] bloodyTiles;
     public List<BloodSplatter> bloodSplatters = new List<BloodSplatter>();
+    public int currentBloodCount;
     public int totalBloodCount;
     public int percentToExpand;
     public float xTileOffset;
@@ -142,7 +143,7 @@ public class GameManager : MonoBehaviour
 
     public int GetScore()
     {
-        return totalBloodCount * 10;
+        return (totalBloodCount + currentBloodCount) * 10;
     }
 
     public void PlayClip(AudioClip clip, float volume, bool isLooping)
@@ -211,7 +212,7 @@ public class GameManager : MonoBehaviour
     public void CheckBloodTiles()
     {
         int totalSize = bloodyTiles.GetLength(0) * bloodyTiles.GetLength(1);
-        float percentCurrentlyFilled = ((float)totalBloodCount / totalSize) * 100;
+        float percentCurrentlyFilled = ((float)currentBloodCount / totalSize) * 100;
 
         // Update size of the blood bar
         float barScaling = percentCurrentlyFilled / percentToExpand;
@@ -232,6 +233,9 @@ public class GameManager : MonoBehaviour
                 AudioSource.PlayClipAtPoint(levelUpSound, Camera.main.transform.position, 1f);
             GameManager.Instance.DisplayText("Level up!", Color.cyan);
 
+            // Update score
+            totalBloodCount += currentBloodCount;
+            currentBloodCount = 0;
             CleanMap();
 
             // Destroy old grid and create new grid 
@@ -241,7 +245,7 @@ public class GameManager : MonoBehaviour
                 Destroy(currentTile.gameObject);
             }
             CreateGrid(startingWidth + (2 * currentLevel), startingHeight + (2 * currentLevel), 2);
-            totalBloodCount = 0;
+
 
             // Destroy old map and create new map
             Destroy(FindObjectOfType<Tiled2Unity.TiledMap>().gameObject);

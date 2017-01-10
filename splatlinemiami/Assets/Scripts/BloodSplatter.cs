@@ -22,7 +22,7 @@ public class BloodSplatter : MonoBehaviour {
             {
                 bloodTile.isBloody = true;
                 hasTile = true;
-                GameManager.Instance.totalBloodCount++;
+                GameManager.Instance.currentBloodCount++;
             }
         }
     }
